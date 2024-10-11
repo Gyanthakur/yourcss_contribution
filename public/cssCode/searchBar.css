@@ -1,0 +1,29 @@
+
+.searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchBar {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    outline: none;
+    width: 60px;
+    background-color: #444;
+    color: #fff;
+    transition: width 0.5s ease;
+  }
+  
+  .searchBar:focus {
+    width: 200px;
+  }
+  
+  .searchBtn {
+    position: absolute;
+    right: 10px;
+    color: #fff;
+    font-size: 18px;
+  }

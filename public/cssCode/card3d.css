@@ -1,0 +1,51 @@
+.card-3d {
+	width: 300px;
+	height: 200px;
+	perspective: 1000px;
+	margin: 50px auto;
+}
+
+.card-content {
+	width: 100%;
+	height: 100%;
+	background-color: #3498db;
+	color: white;
+	padding: 20px;
+	border-radius: 15px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+	transform-style: preserve-3d;
+	transform: rotateX(0deg) rotateY(0deg);
+	transition: transform 0.6s ease;
+}
+
+.card-3d:hover .card-content {
+	transform: rotateX(10deg) rotateY(20deg);
+}
+
+.card-content h3 {
+	margin-top: 0;
+	font-size: 24px;
+	text-align: center;
+}
+
+.card-content p {
+	font-size: 14px;
+	text-align: center;
+}
+
+.btn-3d {
+	display: block;
+	margin: 20px auto;
+	padding: 10px 20px;
+	background-color: white;
+	color: #3498db;
+	text-align: center;
+	border-radius: 5px;
+	text-decoration: none;
+	font-weight: bold;
+	transition: background-color 0.3s ease;
+}
+
+.btn-3d:hover {
+	background-color: #f1f1f1;
+}

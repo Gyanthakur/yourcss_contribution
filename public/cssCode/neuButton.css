@@ -1,0 +1,19 @@
+.neu-button {
+	background-color: #e0e0e0;
+	border-radius: 10px;
+	box-shadow: 5px 5px 10px #aaaaaa, -5px -5px 10px #ffffff;
+	padding: 15px 30px;
+	font-size: 16px;
+	color: #333;
+	border: none;
+	cursor: pointer;
+	transition: box-shadow 0.3s ease;
+}
+
+.neu-button:hover {
+	box-shadow: 2px 2px 5px #aaaaaa, -2px -2px 5px #ffffff;
+}
+
+.neu-button:active {
+	box-shadow: inset 2px 2px 5px #aaaaaa, inset -2px -2px 5px #ffffff;
+}

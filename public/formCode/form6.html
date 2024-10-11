@@ -1,0 +1,42 @@
+<div
+	className="bg-purple-400 hover:bg-green-400 flex justify-center duration-500 hover:scale-x-90 items-center relative group p-5 rounded-lg shadow-lg"
+>
+	<div>
+		<form>
+			<h2 className="text-center mb-4 text-white">Job Application</h2>
+			<label htmlFor="name" className="text-white mb-2 block">
+				Full Name:
+			</label>
+			<input
+				type="text"
+				id="name"
+				name="name"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+			<label htmlFor="cv" className="text-white mb-2 block"> Upload CV: </label>
+			<input
+				type="file"
+				id="cv"
+				name="cv"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+			<label htmlFor="portfolio" className="text-white mb-2 block">
+				Portfolio Link:
+			</label>
+			<input
+				type="url"
+				id="portfolio"
+				name="portfolio"
+				className="w-full p-2 mb-4 rounded"
+			/>
+			<button
+				type="submit"
+				className="w-full p-2 bg-red-500 hover:bg-red-700 text-white rounded"
+			>
+				Apply
+			</button>
+		</form>
+	</div>
+</div>

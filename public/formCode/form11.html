@@ -1,0 +1,86 @@
+<div
+	className="bg-teal-900 hover:bg-teal-600 flex duration-500 hover:scale-105 justify-center items-center relative group p-8 rounded-lg shadow-2xl transform transition-transform perspective-1000 mb-4"
+>
+	<div
+		className="loginForm transform hover:rotate-x-6 hover:rotate-y-6 transition-transform duration-700"
+	>
+		<form>
+			<h2 className="text-center mb-4 text-white">Inquiry Submission Form</h2>
+
+			{/* First Name */}
+			<label htmlFor="firstName5" className="text-white mb-2 block">
+				First Name:
+			</label>
+			<input
+				type="text"
+				id="firstName5"
+				name="firstName5"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+
+			{/* Last Name */}
+			<label htmlFor="lastName5" className="text-white mb-2 block">
+				Last Name:
+			</label>
+			<input
+				type="text"
+				id="lastName5"
+				name="lastName5"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+
+			{/* Email */}
+			<label htmlFor="email5" className="text-white mb-2 block"> Email: </label>
+			<input
+				type="email"
+				id="email5"
+				name="email5"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+
+			{/* Phone */}
+			<label htmlFor="phone5" className="text-white mb-2 block"> Phone: </label>
+			<input
+				type="tel"
+				id="phone5"
+				name="phone5"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+
+			{/* Address */}
+			<label htmlFor="address5" className="text-white mb-2 block">
+				Address:
+			</label>
+			<input
+				type="text"
+				id="address5"
+				name="address5"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+
+			{/* Message/Query */}
+			<label htmlFor="message5" className="text-white mb-2 block">
+				Message/Query:
+			</label>
+			<textarea
+				id="message5"
+				name="message5"
+				required
+				className="w-full p-2 mb-4 rounded"
+			></textarea>
+
+			{/* Submit Button */}
+			<button
+				type="submit"
+				className="w-full p-2 bg-blue-600 hover:bg-blue-800 text-white rounded"
+			>
+				Submit Inquiry
+			</button>
+		</form>
+	</div>
+</div>

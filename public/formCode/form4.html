@@ -1,0 +1,32 @@
+<div
+	className="bg-pink-500 hover:bg-yellow-400 transform transition-transform duration-500 hover:scale-105 flex justify-center items-center relative group p-4 rounded-lg shadow-lg"
+>
+	<div>
+		<form>
+			<h2 className="text-center mb-4 text-white">Survey</h2>
+			<label htmlFor="age" className="text-white mb-2 block"> Age: </label>
+			<input
+				type="number"
+				id="age"
+				name="age"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+			<label htmlFor="feedback" className="text-white mb-2 block">
+				Feedback:
+			</label>
+			<textarea
+				id="feedback"
+				name="feedback"
+				required
+				className="w-full p-2 mb-4 rounded"
+			></textarea>
+			<button
+				type="submit"
+				className="w-full p-2 bg-blue-500 hover:bg-blue-700 text-white rounded"
+			>
+				Submit
+			</button>
+		</form>
+	</div>
+</div>

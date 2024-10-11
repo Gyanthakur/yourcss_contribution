@@ -1,0 +1,41 @@
+<div
+	className="bg-indigo-400 hover:bg-indigo-600 flex duration-500 hover:scale-x-90 justify-center items-center relative group p-5 rounded-lg shadow-lg"
+>
+	<div>
+		<form>
+			<h2 className="text-center mb-4 text-white">Profile Update</h2>
+			<label htmlFor="fullName" className="text-white mb-2 block">
+				Full Name:
+			</label>
+			<input
+				type="text"
+				id="fullName"
+				name="fullName"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+			<label htmlFor="bio" className="text-white mb-2 block"> Bio: </label>
+			<textarea
+				id="bio"
+				name="bio"
+				className="w-full p-2 mb-4 rounded"
+			></textarea>
+			<label htmlFor="profilePic" className="text-white mb-2 block">
+				Profile Picture:
+			</label>
+			<input
+				type="file"
+				id="profilePic"
+				name="profilePic"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+			<button
+				type="submit"
+				className="w-full p-2 bg-red-600 hover:bg-red-800 text-white rounded"
+			>
+				Update
+			</button>
+		</form>
+	</div>
+</div>

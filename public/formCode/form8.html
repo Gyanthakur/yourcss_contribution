@@ -1,0 +1,47 @@
+<div
+	className="bg-orange-500 hover:bg-orange-700 duration-500 hover:scale-105 flex justify-center items-center relative group p-6 rounded-lg shadow-xl perspective-1000"
+>
+	<div
+		className="loginForm transform hover:rotate-x-6 hover:rotate-y-6 transition-transform duration-700"
+	>
+		<form>
+			<h2 className="text-center mb-4 text-white">Event Registration</h2>
+			<label htmlFor="eventName" className="text-white mb-2 block">
+				Event Name:
+			</label>
+			<input
+				type="text"
+				id="eventName"
+				name="eventName"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+			<label htmlFor="attendeeName" className="text-white mb-2 block">
+				Your Name:
+			</label>
+			<input
+				type="text"
+				id="attendeeName"
+				name="attendeeName"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+			<label htmlFor="attendeeName" className="text-white mb-2 block">
+				Event Date:
+			</label>
+			<input
+				type="date"
+				id="date"
+				name="date"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+			<button
+				type="submit"
+				className="w-full p-2 bg-green-600 hover:bg-green-800 text-white rounded"
+			>
+				Register
+			</button>
+		</form>
+	</div>
+</div>

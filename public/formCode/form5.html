@@ -1,0 +1,33 @@
+<div
+	className="bg-blue-500 hover:bg-purple-500 transform transition-transform duration-700 hover:rotate-45 hover:scale-105 flex justify-center items-center relative group p-6 rounded-lg shadow-2xl perspective-1000"
+>
+	<div className="loginForm transform hover:rotate-y-45">
+		<form>
+			<h2 className="text-center mb-4 text-white">Booking</h2>
+			<label htmlFor="name" className="text-white mb-2 block">
+				Full Name:
+			</label>
+			<input
+				type="text"
+				id="name"
+				name="name"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+			<label htmlFor="date" className="text-white mb-2 block"> Date: </label>
+			<input
+				type="date"
+				id="date"
+				name="date"
+				required
+				className="w-full p-2 mb-4 rounded"
+			/>
+			<button
+				type="submit"
+				className="w-full p-2 bg-green-500 hover:bg-green-700 text-white rounded"
+			>
+				Book
+			</button>
+		</form>
+	</div>
+</div>
