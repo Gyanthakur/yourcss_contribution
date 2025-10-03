@@ -65,7 +65,7 @@ Now open 👉 `http://localhost:3000` to view the project locally.
 ## 🤝 Contributing
 
 We welcome contributions! 🎉
-Please check out the [CONTRIBUTION.md](./CONTRIBUTION.md) file for detailed guidelines on how to contribute.
+Please check out the [CONTRIBUTING.md](./CONTRIBUTING.md) file for detailed guidelines on how to contribute.
 
 ---
 
