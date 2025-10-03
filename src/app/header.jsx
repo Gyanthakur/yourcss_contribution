@@ -3,6 +3,7 @@
 import { SignedOut, SignedIn, SignInButton, UserButton } from "@clerk/nextjs";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Logger from "@/components/Logger";
 
 const Header = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -73,6 +74,7 @@ const Header = () => {
 								<a href="/contact" className="hover:text-yellow-400 transition">
 									Contact
 								</a>
+								<Logger/>
 								<UserButton />
 							</SignedIn>
 						</div>
@@ -118,6 +120,7 @@ const Header = () => {
 							<a href="/contact" className="hover:text-yellow-400 transition">
 								Contact
 							</a>
+							<Logger/>
 							<UserButton />
 						</SignedIn>
 					</div>
