@@ -2,11 +2,11 @@ name: Auto Assign Issues and PRs
 
 on:
   pull_request_target:
-    types: [opened, reopened]  # Use pull_request_target for higher permissions
+    types: [opened, reopened]  
   pull_request:
-    types: [opened, reopened]  # Trigger on opened and reopened PRs
+    types: [opened, reopened]  
   issues:
-    types: [opened]            # Trigger on issue open events
+    types: [opened]            
 
 permissions:
   issues: write
