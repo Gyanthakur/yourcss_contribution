@@ -133,7 +133,7 @@ const Form = () => {
 	return (
 		<div>
 			<div className="text-center p-4 bg-gray-100 rounded-lg shadow-md ">
-				<p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700">
+				<p className="mt-1 flex items-center justify-center m-auto text-2xl font-bold text-gray-700">
 					You can easily use all the forms by copying the code. When you hover
 					over any form, a copy button will appear in the right corner, allowing
 					you to quickly copy the component code. All the forms are designed
