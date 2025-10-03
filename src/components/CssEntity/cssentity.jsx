@@ -8,7 +8,7 @@ import { Copy } from "phosphor-react";
 const CodeModal = ({ htmlCode, cssCode, onClose, onCopyHtml, onCopyCss }) => {
 	return (
 		<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-			<div className="bg-white p-6 rounded-lg w-full max-w-4xl relative flex flex-col h-3/4">
+			<div className="bg-white p-6 rounded-lg w-full max-w-4xl relative flex flex-col h-3/4 !text-black">
 				<h2 className="text-xl mb-4">Code Viewer:</h2>
 
 				<div className="flex-1 overflow-y-auto custom-scrollbar">
@@ -118,10 +118,10 @@ const CssEntity = () => {
 			)}
 
 			{/* Example Component for Bubble Left to Right */}
-			<div className="ml-16 m-10 hover:bg-zinc-400 w-40 h-40 flex justify-center items-center relative group">
+			<div className="ml-16 m-10 hover:bg-zinc-400 w-40 h-40 flex justify-center items-center relative group !text-black">
 				<button className={style.bubbleLeftToRight}>Bubble -&gt;</button>
 				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer !text-black"
 					onClick={() =>
 						handleViewCodeClick(
 							"bubbleLeftToRight1.html",

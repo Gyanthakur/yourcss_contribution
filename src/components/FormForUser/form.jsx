@@ -9,7 +9,7 @@ import { Copy } from "phosphor-react";
 const CodeModal = ({ htmlCode, cssCode, onClose, onCopyHtml, onCopyCss }) => {
 	return (
 		<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 mb-10">
-			<div className="bg-white p-6 rounded-lg w-full max-w-4xl relative flex flex-col h-3/4">
+			<div className="bg-white p-6 rounded-lg w-full max-w-4xl relative flex flex-col h-3/4 !text-black">
 				<h2 className="text-xl mb-4">Code Viewer:</h2>
 				<div className="flex-1 overflow-y-auto custom-scrollbar">
 					{/* Display HTML Code */}
