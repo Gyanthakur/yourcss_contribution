@@ -6,9 +6,10 @@ const AboutPage = () => {
 			{/* Hero */}
 			<header className="bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 text-white">
 				<div className="container mx-auto px-6 py-16 lg:py-28">
+			<h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-10">About Us</h1>
 					<div className="flex flex-col-reverse lg:flex-row items-center gap-10">
 						<div className="w-full lg:w-1/2 text-center lg:text-left">
-							<h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">Designing delightful experiences — one pixel at a time</h1>
+							<h3 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">Designing delightful experiences — one pixel at a time</h3>
 							<p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto lg:mx-0 mb-6">We craft modern, accessible interfaces and components using Next.js and Tailwind — focused on performance, usability and delightful micro-interactions.</p>
 							<div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center lg:justify-start">
 								<a href="#about-me" className="bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg shadow hover:shadow-lg transition">About Me</a>
