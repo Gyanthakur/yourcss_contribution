@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "./header";
 import { Meteors } from "@/components/ui/meteors";
 import Footer from "@/components/footer";
-// import { ClerkProvider } from "@clerk/nextjs/dist/types/components.server";
 import {
 	ClerkProvider,
 	SignInButton,
@@ -20,23 +19,31 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+	const clerkEnabled = Boolean(process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY)
 	return (
-		<ClerkProvider>
-			<html lang="en">
-				<body>
-				
-					<SignedOut>
-						<SignInButton />
-					</SignedOut>
-					<SignedIn>
-						<UserButton />
-
+		<html lang="en">
+			<body>
+				{clerkEnabled ? (
+					<ClerkProvider>
+						<SignedOut>
+							<SignInButton />
+						</SignedOut>
+						<SignedIn>
+							<UserButton />
+							<Header />
+							<div className="mb-3 mt-3">{children}</div>
+							<Footer />
+						</SignedIn>
+					</ClerkProvider>
+				) : (
+					// Fallback rendering when Clerk keys are missing (local/dev without auth)
+					<>
 						<Header />
 						<div className="mb-3 mt-3">{children}</div>
 						<Footer />
-					</SignedIn>
-				</body>
-			</html>
-		</ClerkProvider>
+					</>
+				)}
+			</body>
+		</html>
 	);
 }

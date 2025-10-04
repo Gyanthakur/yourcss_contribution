@@ -8,6 +8,7 @@ import Logger from "@/components/Logger";
 const Header = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [isDarkMode, setIsDarkMode] = useState(false);
+    const clerkEnabled = Boolean(process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY);
 
 	// Load theme from local storage or default to system preference
 	useEffect(() => {
@@ -55,29 +56,30 @@ const Header = () => {
 					<div className="flex items-center space-x-6">
 						{/* Desktop Menu */}
 						<div className="hidden md:flex space-x-8 text-lg">
-							<SignedOut>
-								<SignInButton />
-							</SignedOut>
-							<SignedIn>
-								<a href="/" className="hover:text-yellow-400 transition">
-									Home
-								</a>
-								<a href="/about" className="hover:text-yellow-400 transition">
-									About
-								</a>
-								<a
-									href="/services"
-									className="hover:text-yellow-400 transition"
-								>
-									Services
-								</a>
-								<a href="/contact" className="hover:text-yellow-400 transition">
-									Contact
-								</a>
-								<Logger/>
-								<UserButton />
-							</SignedIn>
-						</div>
+	                        {clerkEnabled ? (
+	                            <>
+	                                <SignedOut>
+	                                    <SignInButton />
+	                                </SignedOut>
+	                                <SignedIn>
+	                                    <a href="/" className="hover:text-yellow-400 transition">Home</a>
+	                                    <a href="/about" className="hover:text-yellow-400 transition">About</a>
+	                                    <a href="/services" className="hover:text-yellow-400 transition">Services</a>
+	                                    <a href="/contact" className="hover:text-yellow-400 transition">Contact</a>
+	                                    <Logger/>
+	                                    <UserButton />
+	                                </SignedIn>
+	                            </>
+	                        ) : (
+	                            <>
+	                                <a href="/" className="hover:text-yellow-400 transition">Home</a>
+	                                <a href="/about" className="hover:text-yellow-400 transition">About</a>
+	                                <a href="/services" className="hover:text-yellow-400 transition">Services</a>
+	                                <a href="/contact" className="hover:text-yellow-400 transition">Contact</a>
+	                                <Logger/>
+	                            </>
+	                        )}
+	                    </div>
 
 						{/* Theme Toggle Button */}
 						<button
@@ -104,25 +106,29 @@ const Header = () => {
 				{/* Mobile Menu */}
 				{menuOpen && (
 					<div className="md:hidden flex flex-col items-center bg-blue-800 dark:bg-gray-800 py-4 space-y-4">
-						<SignedOut>
-							<SignInButton />
-						</SignedOut>
-						<SignedIn>
-							<a href="/" className="hover:text-yellow-400 transition">
-								Home
-							</a>
-							<a href="/about" className="hover:text-yellow-400 transition">
-								About
-							</a>
-							<a href="/services" className="hover:text-yellow-400 transition">
-								Services
-							</a>
-							<a href="/contact" className="hover:text-yellow-400 transition">
-								Contact
-							</a>
-							<Logger/>
-							<UserButton />
-						</SignedIn>
+						{clerkEnabled ? (
+							<>
+								<SignedOut>
+									<SignInButton />
+								</SignedOut>
+								<SignedIn>
+									<a href="/" className="hover:text-yellow-400 transition">Home</a>
+									<a href="/about" className="hover:text-yellow-400 transition">About</a>
+									<a href="/services" className="hover:text-yellow-400 transition">Services</a>
+									<a href="/contact" className="hover:text-yellow-400 transition">Contact</a>
+									<Logger/>
+									<UserButton />
+								</SignedIn>
+							</>
+						) : (
+							<>
+								<a href="/" className="hover:text-yellow-400 transition">Home</a>
+								<a href="/about" className="hover:text-yellow-400 transition">About</a>
+								<a href="/services" className="hover:text-yellow-400 transition">Services</a>
+								<a href="/contact" className="hover:text-yellow-400 transition">Contact</a>
+								<Logger/>
+							</>
+						)}
 					</div>
 				)}
 			</header>

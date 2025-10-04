@@ -1,12 +1,25 @@
+import { NextResponse } from 'next/server'
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
+// Public routes that don't require authentication
 const isPublicRoute = createRouteMatcher(['/sign-in(.*)', '/sign-up(.*)'])
 
-export default clerkMiddleware((auth, request) => {
+// Detect if Clerk is configured. We require the publishable key to be present.
+const clerkEnabled = Boolean(process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY)
+
+// If Clerk is configured, use it to protect non-public routes.
+// Otherwise, fall back to a no-op middleware so local dev works without keys.
+const middlewareWhenClerkEnabled = clerkMiddleware((auth, request) => {
   if (!isPublicRoute(request)) {
     auth().protect()
   }
 })
+
+export default clerkEnabled
+  ? middlewareWhenClerkEnabled
+  : function middleware() {
+      return NextResponse.next()
+    }
 
 export const config = {
   matcher: [
