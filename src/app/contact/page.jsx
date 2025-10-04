@@ -17,7 +17,8 @@ const ContactPage = () => {
 		// 		required
 		// 	/>
 
-		// 	<lable htmlFor="Middle Name" className="text-white mb-2">
+		// 	<lable htmlFor="Middle Name" className="text-wh
+		// ite mb-2">
 		// 		Middle Name
 		// 	</lable>
 		// 	<input
@@ -94,7 +95,7 @@ const ContactPage = () => {
 								First Name:
 							</label>
 							<input
-								className="bg-white rounded-md py-2 px-3 mb-4"
+								className="bg-white rounded-md py-2 px-3 mb-4 !text-black"
 								type="text"
 								id="firstName"
 								name="firstName"
@@ -106,7 +107,7 @@ const ContactPage = () => {
 								Middle Name
 							</lable>
 							<input
-								className="bg-white rounded-md px-3 py-2 mb-4"
+								className="bg-white rounded-md px-3 py-2 mb-4 !text-black"
 								type="text"
 								id="MiddleName"
 								name="MiddleName"
@@ -117,7 +118,7 @@ const ContactPage = () => {
 								Last Name:
 							</label>
 							<input
-								className="bg-white rounded-md py-2 px-3 mb-4"
+								className="bg-white rounded-md py-2 px-3 mb-4 !text-black"
 								type="text"
 								id="lastName"
 								name="lastName"
@@ -129,7 +130,7 @@ const ContactPage = () => {
 								Phone No:
 							</label>
 							<input
-								className="bg-white rounded-md py-2 px-3 mb-4"
+								className="bg-white rounded-md py-2 px-3 mb-4 !text-black"
 								type="number"
 								id="phone"
 								name="phone"
@@ -141,7 +142,7 @@ const ContactPage = () => {
 								Email:
 							</label>
 							<input
-								className="bg-white rounded-md py-2 px-3 mb-4"
+								className="bg-white rounded-md py-2 px-3 mb-4 !text-black"
 								type="email"
 								id="email"
 								name="email"
@@ -153,7 +154,7 @@ const ContactPage = () => {
 								Write your message or query here:
 							</label>
 							<textarea
-								className="bg-white rounded-md py-2 px-3 mb-4"
+								className="bg-white rounded-md py-2 px-3 mb-4 !text-black"
 								id="textArea"
 								name="textArea"
 								placeholder="Enter your message here"
