@@ -8,20 +8,20 @@ import { Copy } from "phosphor-react";
 // Modal component to display both HTML and CSS code with copy functionality
 const CodeModal = ({ htmlCode, cssCode, onClose, onCopyHtml, onCopyCss }) => {
 	return (
-		<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 mb-10">
-			<div className="bg-white p-6 rounded-lg w-full max-w-4xl relative flex flex-col h-3/4 !text-black">
-				<h2 className="text-xl mb-4">Code Viewer:</h2>
-				<div className="flex-1 overflow-y-auto custom-scrollbar">
+		<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 dark:bg-black dark:bg-opacity-70 z-50 mb-10 backdrop-blur-sm">
+			<div className="bg-white dark:bg-gray-800 p-6 rounded-lg w-full max-w-4xl relative flex flex-col h-3/4 shadow-2xl border border-gray-200 dark:border-gray-700 transition-colors duration-300">
+				<h2 className="text-xl mb-4 text-gray-900 dark:text-gray-100 font-semibold">Code Viewer:</h2>
+				<div className="flex-1 overflow-y-auto custom-scrollbar scroll-smooth">
 					{/* Display HTML Code */}
 					<div className="relative">
-						<h3 className="text-lg mb-2 font-bold">HTML Code:</h3>
+						<h3 className="text-lg mb-2 font-bold text-gray-800 dark:text-gray-200">HTML Code:</h3>
 						<button
-							className="absolute top-0 right-0 m-2 text-blue-500 hover:text-blue-700"
+							className="absolute top-0 right-0 m-2 text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-200"
 							onClick={onCopyHtml}
 						>
-							<Copy size={25} />
+							<Copy size={20} />
 						</button>
-						<pre className="bg-gray-100 p-4 rounded overflow-auto mb-4">
+						<pre className="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 p-4 rounded overflow-auto mb-4 border border-gray-200 dark:border-gray-600 text-sm">
 							{htmlCode}
 						</pre>
 					</div>
@@ -42,7 +42,7 @@ const CodeModal = ({ htmlCode, cssCode, onClose, onCopyHtml, onCopyCss }) => {
 				{/* Copy and Close Buttons */}
 				<div className="mt-4 flex flex-col sm:flex-row gap-2 justify-between">
 					<button
-						className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 w-full sm:w-auto"
+						className="bg-blue-500 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white px-4 py-2 rounded transition-colors duration-200 w-full sm:w-auto"
 						onClick={onCopyHtml}
 					>
 						Copy HTML Code
@@ -54,7 +54,7 @@ const CodeModal = ({ htmlCode, cssCode, onClose, onCopyHtml, onCopyCss }) => {
 						Copy CSS Code
 					</button> */}
 					<button
-						className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 w-full sm:w-auto"
+						className="bg-red-500 hover:bg-red-700 dark:bg-red-600 dark:hover:bg-red-700 text-white px-4 py-2 rounded transition-colors duration-200 w-full sm:w-auto"
 						onClick={onClose}
 					>
 						Close
@@ -69,7 +69,6 @@ const Form = () => {
 	const [showCodeModal, setShowCodeModal] = useState(false);
 	const [htmlCodeToShow, setHtmlCodeToShow] = useState("");
 	const [cssCodeToShow, setCssCodeToShow] = useState("");
-	const [isDarkMode, setIsDarkMode] = useState(false);
 
 	// Function to fetch both CSS and HTML file content and open the modal
 	const handleViewCodeClick = async (htmlFileName, cssFileName) => {
@@ -103,37 +102,13 @@ const Form = () => {
 	};
 	
 
-	// Load theme from local storage or default to system preference
-	useEffect(() => {
-		const theme = localStorage.getItem("theme");
-		if (
-			theme === "dark" ||
-			(!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
-		) {
-			setIsDarkMode(true);
-			document.documentElement.classList.add("dark");
-		} else {
-			setIsDarkMode(false);
-			document.documentElement.classList.remove("dark");
-		}
-	}, []);
 
-	// Toggle theme and save preference to local storage
-	const toggleTheme = () => {
-		if (isDarkMode) {
-			document.documentElement.classList.remove("dark");
-			localStorage.setItem("theme", "light");
-		} else {
-			document.documentElement.classList.add("dark");
-			localStorage.setItem("theme", "dark");
-		}
-		setIsDarkMode(!isDarkMode);
-	};
+
 
 	return (
-		<div>
-			<div className="text-center p-4 bg-gray-100 rounded-lg shadow-md ">
-				<p className="mt-1 flex items-center justify-center m-auto text-2xl font-bold text-gray-700">
+		<div className="bg-white dark:bg-gray-900 transition-colors duration-300">
+			<div className="text-center p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md transition-colors duration-300">
+				<p className="mt-1 flex items-center justify-center m-auto text-2xl font-bold text-gray-700 dark:text-gray-300">
 					You can easily use all the forms by copying the code. When you hover
 					over any form, a copy button will appear in the right corner, allowing
 					you to quickly copy the component code. All the forms are designed
@@ -153,7 +128,7 @@ const Form = () => {
 				)}
 
 				{/* Form 1 */}
-				<div className="bg-red-400 hover:bg-sky-400 flex duration-500 hover:scale-105 justify-center items-center relative group p-6 rounded-lg shadow-md">
+				<div className="bg-red-400 dark:bg-red-500 hover:bg-sky-400 dark:hover:bg-sky-500 flex duration-500 hover:scale-105 justify-center items-center relative group p-6 rounded-lg shadow-md dark:shadow-gray-700/30 border border-transparent dark:border-gray-600 transition-all">
 					<div>
 						<form>
 							<h2 className="text-center mb-4 text-white">Login</h2>

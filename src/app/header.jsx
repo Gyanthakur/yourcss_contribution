@@ -1,40 +1,13 @@
 "use client";
 
 import { SignedOut, SignedIn, SignInButton, UserButton } from "@clerk/nextjs";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Logger from "@/components/Logger";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Header = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
-	const [isDarkMode, setIsDarkMode] = useState(false);
-
-	// Load theme from local storage or default to system preference
-	useEffect(() => {
-		const theme = localStorage.getItem("theme");
-		if (
-			theme === "dark" ||
-			(!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
-		) {
-			setIsDarkMode(true);
-			document.documentElement.classList.add("dark");
-		} else {
-			setIsDarkMode(false);
-			document.documentElement.classList.remove("dark");
-		}
-	}, []);
-
-	// Toggle theme and save preference to local storage
-	const toggleTheme = () => {
-		if (isDarkMode) {
-			document.documentElement.classList.remove("dark");
-			localStorage.setItem("theme", "light");
-		} else {
-			document.documentElement.classList.add("dark");
-			localStorage.setItem("theme", "dark");
-		}
-		setIsDarkMode(!isDarkMode);
-	};
 
 	return (
 		<>
@@ -80,13 +53,7 @@ const Header = () => {
 						</div>
 
 						{/* Theme Toggle Button */}
-						<button
-							onClick={toggleTheme}
-							className="text-2xl focus:outline-none"
-							aria-label="Toggle light/dark mode"
-						>
-							{isDarkMode ? "🌞" : "🌙"}
-						</button>
+						<ThemeToggle />
 
 						{/* Mobile Menu Button */}
 						<div className="md:hidden">

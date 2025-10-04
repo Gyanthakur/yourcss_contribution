@@ -51,36 +51,101 @@ a:hover
 	--background-start-rgb: 214, 219, 220;
 	--background-end-rgb: 255, 255, 255;
 	--tw-gradient-stops: #1bc245, #d81818;
+	
+	/* Light mode colors */
+	--color-primary: #1bc245;
+	--color-secondary: #d81818;
+	--color-accent: #fbbf24;
+	--color-bg-primary: #ffffff;
+	--color-bg-secondary: #f8fafc;
+	--color-text-primary: #0f172a;
+	--color-text-secondary: #64748b;
+	--color-border: #e2e8f0;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--foreground-rgb: 255, 255, 255;
-		--background-start-rgb: 0, 0, 0;
-		--background-end-rgb: 0, 0, 0;
-	}
-}
-
-body {
-	color: black;
-	width: screen;
+.dark {
+	--foreground-rgb: 255, 255, 255;
+	--background-start-rgb: 0, 0, 0;
+	--background-end-rgb: 0, 0, 0;
+	
+	/* Dark mode colors */
+	--color-primary: #22c55e;
+	--color-secondary: #ef4444;
+	--color-accent: #fbbf24;
+	--color-bg-primary: #0f172a;
+	--color-bg-secondary: #1e293b;
+	--color-text-primary: #f8fafc;
+	--color-text-secondary: #cbd5e1;
+	--color-border: #334155;
 }
 
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+a, button, input, textarea, select {
+	transition: all 0.2s ease;
 }
 
 a:hover {
-	color: #1bc245;
+	color: var(--color-primary);
 }
 
-/* Dark Mode Styles */
-.dark body {
-	background-color: black;
-	color: white;
+/* Custom scrollbar for dark mode compatibility */
+::-webkit-scrollbar {
+	width: 8px;
 }
 
-.dark a:hover {
-	color: #1bc245; /* Keep hover effect consistent */
+::-webkit-scrollbar-track {
+	@apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-gray-400 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	@apply bg-gray-500 dark:bg-gray-500;
+}
+
+/* Custom utility classes */
+.bg-primary {
+	background-color: var(--color-bg-primary);
+}
+
+.bg-secondary {
+	background-color: var(--color-bg-secondary);
+}
+
+.text-primary {
+	color: var(--color-text-primary);
+}
+
+.text-secondary {
+	color: var(--color-text-secondary);
+}
+
+.border-custom {
+	border-color: var(--color-border);
+}
+
+/* Loading animation for theme switches */
+.theme-transition {
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom button styles that work in both themes */
+.btn-primary {
+	@apply bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors duration-200;
+}
+
+.btn-secondary {
+	@apply bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition-colors duration-200;
 }
