@@ -2,50 +2,20 @@
 import CssEntity from "@/components/CssEntity/cssentity";
 import Form from "@/components/FormForUser/form";
 import { LampDemo } from "@/components/ui/lamp";
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { Meteors } from "@/components/ui/meteors";
 
-
 export default function Home() {
-
-	const [isDarkMode, setIsDarkMode] = useState(false);
-
-	// Load theme from local storage or default to system preference
-	useEffect(() => {
-		const theme = localStorage.getItem("theme");
-		if (
-			theme === "dark" ||
-			(!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
-		) {
-			setIsDarkMode(true);
-			document.documentElement.classList.add("dark");
-		} else {
-			setIsDarkMode(false);
-			document.documentElement.classList.remove("dark");
-		}
-	}, []);
-
-	// Toggle theme and save preference to local storage
-	const toggleTheme = () => {
-		if (isDarkMode) {
-			document.documentElement.classList.remove("dark");
-			localStorage.setItem("theme", "light");
-		} else {
-			document.documentElement.classList.add("dark");
-			localStorage.setItem("theme", "dark");
-		}
-		setIsDarkMode(!isDarkMode);
-	};
 	return (
-		<div className="dark">
-			<div className="">
+		<div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+			<div className="container mx-auto px-4">
 				<LampDemo className="mt-0" />
-				<h1 className=" flex justify-center items-center pl-6 pr-6 text-5xl mt-3 font-bold ">
+				<h1 className="flex justify-center items-center px-6 text-5xl mt-3 font-bold text-gray-900 dark:text-gray-100 text-center">
 					Beautifully simple click-to-copy CSS effects
 				</h1>
 
-				<p className="mt-6 flex items-center justify-center pl-20 pr-20 m-auto text-1xl font-bold">
+				<p className="mt-6 flex items-center justify-center px-20 mx-auto text-xl font-semibold text-gray-700 dark:text-gray-300 text-center max-w-4xl">
 					Explore a variety of stunning CSS effects that you can easily copy and
 					use in your projects. Simply click the button, and the code is
 					instantly copied to your clipboard. No hassle, just beautiful design.

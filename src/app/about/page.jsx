@@ -2,9 +2,9 @@ import Image from "next/image";
 
 const AboutPage = () => {
 	return (
-		<div className="min-h-screen bg-gray-50 text-gray-800">
+		<div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
 			{/* Hero Section */}
-			<section className="bg-blue-900 text-white py-12">
+			<section className="bg-blue-900 dark:bg-gray-800 text-white dark:text-gray-100 py-12 transition-colors duration-300">
 				<div className="container mx-auto flex flex-col md:flex-row items-center px-6">
 					<div className="md:w-1/2 mb-8 md:mb-0">
 						<h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
@@ -27,12 +27,12 @@ const AboutPage = () => {
 			</section>
 
 			{/* Company Mission Section */}
-			<section className="py-12">
+			<section className="py-12 bg-white dark:bg-gray-900 transition-colors duration-300">
 				<div className="container mx-auto px-6">
-					<h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+					<h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">
 						Our Mission
 					</h2>
-					<p className="text-lg text-center max-w-3xl mx-auto">
+					<p className="text-lg text-center max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
 						At our company, we aim to revolutionize the way businesses interact
 						with technology. Our goal is to provide solutions that empower your
 						organization, streamline operations, and drive growth.
@@ -42,8 +42,8 @@ const AboutPage = () => {
 
 			{/* about me  */}
 
-			<div className="container mx-auto mt-24 px-4 py-8">
-				<h1 className="text-4xl font-bold text-center mb-8">About Me</h1>
+			<div className="container mx-auto mt-24 px-4 py-8 bg-gray-50 dark:bg-gray-800 rounded-lg transition-colors duration-300">
+				<h1 className="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">About Me</h1>
 				<div className="flex flex-col md:flex-row items-center justify-center">
 					{/* Image Section */}
 					<div className="w-full md:w-1/3 mb-6 md:mb-0">
@@ -92,9 +92,9 @@ const AboutPage = () => {
 			</div>
 
 			{/* Team Section */}
-			<section className="bg-gray-100 py-12">
+			<section className="bg-gray-100 dark:bg-gray-800 py-12 transition-colors duration-300">
 				<div className="container mx-auto px-6">
-					<h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+					<h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">
 						Meet Our Team
 					</h2>
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -140,16 +140,16 @@ const AboutPage = () => {
 			</section>
 
 			{/* Call to Action */}
-			<section className="bg-blue-900 text-white py-12">
+			<section className="bg-blue-900 dark:bg-gray-800 text-white dark:text-gray-100 py-12 transition-colors duration-300">
 				<div className="container mx-auto text-center px-6">
 					<h2 className="text-3xl md:text-4xl font-bold mb-4">Join Us</h2>
-					<p className="text-lg mb-8">
+					<p className="text-lg mb-8 text-gray-200 dark:text-gray-300">
 						We are always looking for talented individuals to join our team and
 						help us create cutting-edge solutions.
 					</p>
 					<a
 						href="/careers"
-						className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg transition"
+						className="bg-yellow-500 hover:bg-yellow-600 dark:bg-yellow-600 dark:hover:bg-yellow-700 text-black dark:text-gray-900 font-bold py-3 px-6 rounded-lg transition-colors duration-200"
 					>
 						Explore Careers
 					</a>
