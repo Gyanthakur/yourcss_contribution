@@ -2,159 +2,107 @@ import Image from "next/image";
 
 const AboutPage = () => {
 	return (
-		<div className="min-h-screen bg-gray-50 text-gray-800">
-			{/* Hero Section */}
-			<section className="bg-blue-900 text-white py-12">
-				<div className="container mx-auto flex flex-col md:flex-row items-center px-6">
-					<div className="md:w-1/2 mb-8 md:mb-0">
-						<h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
-						<p className="text-lg md:text-xl">
-							We are dedicated to providing exceptional services to help your
-							business grow. Our mission is to deliver innovative solutions
-							tailored to your needs.
-						</p>
+		<div className="min-h-screen bg-white text-gray-800 font-sans">
+			{/* Hero */}
+			<header className="bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 text-white">
+				<div className="container mx-auto px-6 py-16 lg:py-28">
+			<h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-10">About Us</h1>
+					<div className="flex flex-col-reverse lg:flex-row items-center gap-10">
+						<div className="w-full lg:w-1/2 text-center lg:text-left">
+							<h3 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">Designing delightful experiences — one pixel at a time</h3>
+							<p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto lg:mx-0 mb-6">We craft modern, accessible interfaces and components using Next.js and Tailwind — focused on performance, usability and delightful micro-interactions.</p>
+							<div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center lg:justify-start">
+								<a href="#about-me" className="bg-white text-blue-900 font-semibold px-6 py-3 rounded-lg shadow hover:shadow-lg transition">About Me</a>
+								<a href="#contact" className="border border-white/30 text-white px-6 py-3 rounded-lg hover:bg-white/10 transition">Contact</a>
+							</div>
+						</div>
+
+						<div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+							<div className="relative rounded-2xl overflow-hidden shadow-2xl w-72 h-72 sm:w-96 sm:h-96 ring-4 ring-white/10">
+								<Image src="/dfd.jpg" alt="illustration" fill className="object-cover" />
+							</div>
+						</div>
 					</div>
-					<div className="md:w-1/2">
-						<Image
-							src="/dfd.jpg"
-							alt="About us illustration"
-							width={800}
-							height={600}
-							className="w-full h-auto rounded-lg shadow-lg"
-						/>
+				</div>
+			</header>
+
+			{/* Mission / Values */}
+			<section className="container mx-auto px-6 py-12">
+				<div className="grid gap-8 lg:grid-cols-3 items-start">
+					<div className="lg:col-span-2 bg-white rounded-2xl shadow p-8">
+						<h2 className="text-2xl sm:text-5xl font-bold mb-4">Our Mission</h2>
+						<p className="text-lg leading-relaxed text-gray-700">We help teams ship faster by building reusable UI components, accessible layouts, and sensible defaults. Our priority is to make interfaces that are beautiful, performant and easy to maintain.</p>
+						<div className="mt-6 flex flex-wrap gap-3">
+							<span className="px-3 py-1 bg-blue-50 text-blue-800 rounded-full text-sm font-medium">Next.js</span>
+							<span className="px-3 py-1 bg-blue-50 text-blue-800 rounded-full text-sm font-medium">TailwindCSS</span>
+							<span className="px-3 py-1 bg-blue-50 text-blue-800 rounded-full text-sm font-medium">Accessibility</span>
+							<span className="px-3 py-1 bg-blue-50 text-blue-800 rounded-full text-sm font-medium">Performance</span>
+						</div>
+					</div>
+
+					
+				</div>
+			</section>
+
+			{/* About Me */}
+			<section id="about-me" className="bg-gray-50">
+				<div className="container mx-auto px-6 py-12">
+					<div className="grid gap-8 lg:grid-cols-3 items-center">
+						<div className="col-span-1 flex justify-center">
+							<div className="w-56 h-56 rounded-full overflow-hidden shadow-lg ring-4 ring-white">
+								<Image src="/profile-picture.jpg" alt="Gyan Pratap Singh" width={560} height={560} className="object-cover" />
+							</div>
+						</div>
+
+						<div className="lg:col-span-2 bg-white rounded-2xl p-8 shadow">
+							<h2 className="text-3xl sm:text-4xl font-bold mb-3">Hi, I’m Gyan Pratap Singh</h2>
+							<p className="text-gray-700 leading-7 mb-4">A front-end developer and UI enthusiast currently pursuing B.Tech in Computer Science at Kamla Nehru Institute of Technology. I focus on building responsive, accessible and fast user interfaces.</p>
+
+							<div className="grid gap-4 sm:grid-cols-2">
+								<div>
+									<h4 className="text-sm font-semibold text-gray-900">Education</h4>
+									<p className="text-gray-600">B.Tech · Kamla Nehru Institute of Technology · CGPA 8.75 (May 2025)</p>
+								</div>
+								<div>
+									<h4 className="text-sm font-semibold text-gray-900">Interests</h4>
+									<p className="text-gray-600">Open-source, performance tuning, algorithms, and delightful UI.</p>
+								</div>
+							</div>
+
+							<div className="mt-6 flex flex-wrap gap-3">
+								<a className="inline-block px-4 py-2 bg-blue-900 text-white rounded-lg shadow" href="#contact">Get in touch</a>
+								<a className="inline-block px-4 py-2 border border-blue-200 text-blue-900 rounded-lg" href="/">See portfolio</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
 
-			{/* Company Mission Section */}
-			<section className="py-12">
-				<div className="container mx-auto px-6">
-					<h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-						Our Mission
-					</h2>
-					<p className="text-lg text-center max-w-3xl mx-auto">
-						At our company, we aim to revolutionize the way businesses interact
-						with technology. Our goal is to provide solutions that empower your
-						organization, streamline operations, and drive growth.
-					</p>
-				</div>
-			</section>
+			{/* Team */}
+			<section className="container mx-auto px-6 py-12">
+  		<h3 className="text-3xl sm:text-4xl font-bold text-center mb-8">Meet Our Team</h3>
 
-			{/* about me  */}
-
-			<div className="container mx-auto mt-24 px-4 py-8">
-				<h1 className="text-4xl font-bold text-center mb-8">About Me</h1>
-				<div className="flex flex-col md:flex-row items-center justify-center">
-					{/* Image Section */}
-					<div className="w-full md:w-1/3 mb-6 md:mb-0">
-						<Image
-							src="/profile-picture.jpg"
-							alt="Gyan Pratap Singh"
-              width={800}
-							height={600}
-							className="rounded-full mx-auto w-48 h-48 object-cover shadow-lg"
-						/>
-					</div>
-					{/* About Me Text */}
-					<div className="w-full md:w-2/3 px-4">
-						<p className="text-lg leading-8 text-justify">
-							Hi! I am <span className="font-bold">Gyan Pratap Singh</span>, a
-							passionate tech enthusiast with a strong background in software
-							development, particularly in front-end technologies. I am
-							currently pursuing a Bachelor of Technology (B.Tech) in Computer
-							Science at Kamla Nehru Institute of Technology, Sultanpur, and
-							will graduate in May 2025 with a CGPA of 8.75.
-						</p>
-						<p className="mt-4 text-lg leading-8 text-justify">
-							Over the past few years, I have gained significant experience in
-							web development, from building e-learning platforms to working on
-							interactive and responsive UI components. I am also an avid
-							contributor to open-source projects, having participated in
-							Hacktoberfest and working on several collaborative initiatives. My
-							technical stack includes Next.js, TailwindCSS, MongoDB, Clerk, and
-							Supabase, among others.
-						</p>
-						<p className="mt-4 text-lg leading-8 text-justify">
-							Apart from coding, I have a strong interest in algorithmic problem
-							solving, always looking to optimize performance and avoid common
-							pitfalls such as time limit exceeded (TLE) issues. I’m also
-							recognized as a Postman Student Expert, Git Certified Specialist,
-							and have developed a variety of projects such as a job portal app,
-							notes store, and food ordering web app.
-						</p>
-						<p className="mt-4 text-lg leading-8 text-justify">
-							I am always open to learning new technologies and exploring
-							creative solutions to technical challenges. Feel free to explore
-							my portfolio or reach out to discuss potential collaborations!
-						</p>
-					</div>
+		<div className="flex justify-center">
+			<div className="w-full sm:w-1/2 md:w-1/3 flex justify-center">
+			<div className="bg-white rounded-3xl p-6 text-center shadow w-full max-w-sm">
+				<div className="w-28 h-28 rounded-full overflow-hidden mb-4 mx-auto">
+				<Image src="/profile-picture.jpg" alt="Gyan Singh" width={112} height={112} className="object-cover" />
 				</div>
+				<h4 className="font-semibold">Gyan Singh</h4>
+				<p className="text-sm text-gray-500">Founder</p>
 			</div>
+			</div>
+		</div>
+		</section>	
 
-			{/* Team Section */}
-			<section className="bg-gray-100 py-12">
-				<div className="container mx-auto px-6">
-					<h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-						Meet Our Team
-					</h2>
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-						{/* Example Team Member */}
-						<div className="text-center">
-							<Image
-								src="/path/to/team-member.jpg"
-								alt="Team member"
-                width={800}
-							height={600}
-								className="w-32 h-32 mx-auto rounded-full mb-4"
-							/>
-							<h3 className="text-xl font-semibold">John Doe</h3>
-							<p className="text-gray-600">CEO & Founder</p>
-						</div>
-
-						{/* Add more team members as needed */}
-						<div className="text-center">
-							<Image
-								src="/path/to/team-member2.jpg"
-								alt="Team member"
-                width={800}
-							height={600}
-								className="w-32 h-32 mx-auto rounded-full mb-4"
-							/>
-							<h3 className="text-xl font-semibold">Jane Smith</h3>
-							<p className="text-gray-600">CTO</p>
-						</div>
-
-						<div className="text-center">
-							<Image
-								src="/path/to/team-member3.jpg"
-								alt="Team member"
-                width={800}
-							height={600}
-								className="w-32 h-32 mx-auto rounded-full mb-4"
-							/>
-							<h3 className="text-xl font-semibold">Emily Johnson</h3>
-							<p className="text-gray-600">Head of Marketing</p>
-						</div>
-					</div>
+		
+			<footer id="contact" className="bg-blue-900 text-white py-12">
+				<div className="container mx-auto px-6 text-center">
+					<h3 className="text-3xl sm:text-3xl font-bold mb-3">Want to collaborate?</h3>
+					<p className="text-blue-100 mb-6">If you have a project in mind or just want to say hi — drop a message.</p>
+					<a href="mailto:hello@example.com" className="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold shadow">Say Hello</a>
 				</div>
-			</section>
-
-			{/* Call to Action */}
-			<section className="bg-blue-900 text-white py-12">
-				<div className="container mx-auto text-center px-6">
-					<h2 className="text-3xl md:text-4xl font-bold mb-4">Join Us</h2>
-					<p className="text-lg mb-8">
-						We are always looking for talented individuals to join our team and
-						help us create cutting-edge solutions.
-					</p>
-					<a
-						href="/careers"
-						className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg transition"
-					>
-						Explore Careers
-					</a>
-				</div>
-			</section>
+			</footer>
 		</div>
 	);
 };
