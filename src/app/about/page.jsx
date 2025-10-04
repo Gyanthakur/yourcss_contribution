@@ -100,41 +100,47 @@ const AboutPage = () => {
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 						{/* Example Team Member */}
 						<div className="text-center">
-							<Image
-								src="/path/to/team-member.jpg"
-								alt="Team member"
-                width={800}
-							height={600}
-								className="w-32 h-32 mx-auto rounded-full mb-4"
-							/>
-							<h3 className="text-xl font-semibold">John Doe</h3>
-							<p className="text-gray-600">CEO & Founder</p>
-						</div>
+  <div className="w-32 h-32 mx-auto rounded-full mb-4 overflow-hidden flex items-center justify-center bg-gray-200">
+    <Image
+      src="/image.jpg"
+      alt="Team member"
+      width={800}
+      height={600}
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <h3 className="text-xl font-semibold">John Doe</h3>
+  <p className="text-gray-600">CEO & Founder</p>
+</div>
 
 						{/* Add more team members as needed */}
 						<div className="text-center">
-							<Image
-								src="/path/to/team-member2.jpg"
-								alt="Team member"
-                width={800}
-							height={600}
-								className="w-32 h-32 mx-auto rounded-full mb-4"
-							/>
-							<h3 className="text-xl font-semibold">Jane Smith</h3>
-							<p className="text-gray-600">CTO</p>
-						</div>
+  <div className="w-32 h-32 mx-auto rounded-full mb-4 overflow-hidden flex items-center justify-center bg-gray-200">
+    <Image
+      src="/image.jpg"
+      alt="Team member"
+      width={800}
+      height={600}
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <h3 className="text-xl font-semibold">Jane Smith</h3>
+  <p className="text-gray-600">CTO</p>
+</div>
 
-						<div className="text-center">
-							<Image
-								src="/path/to/team-member3.jpg"
-								alt="Team member"
-                width={800}
-							height={600}
-								className="w-32 h-32 mx-auto rounded-full mb-4"
-							/>
-							<h3 className="text-xl font-semibold">Emily Johnson</h3>
-							<p className="text-gray-600">Head of Marketing</p>
-						</div>
+					<div className="text-center">
+  <div className="w-32 h-32 mx-auto rounded-full mb-4 overflow-hidden flex items-center justify-center bg-gray-200">
+    <Image
+      src="/image.jpg"
+      alt="Team member"
+      width={800}
+      height={600}
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <h3 className="text-xl font-semibold">Emily Johnson</h3>
+  <p className="text-gray-600">Head of Marketing</p>
+</div>
 					</div>
 				</div>
 			</section>
