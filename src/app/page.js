@@ -9,9 +9,9 @@ import { Meteors } from "@/components/ui/meteors";
 export default function Home() {
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
-			<div className="container mx-auto px-4">
+			<div className="container mx-auto px-4 pt-2">
 				<LampDemo className="mt-0" />
-				<h1 className="flex justify-center items-center px-6 text-5xl mt-3 font-bold text-gray-900 dark:text-gray-100 text-center">
+				<h1 className="flex justify-center items-center px-6 text-5xl pt-3 font-bold text-gray-900 dark:text-gray-100 text-center">
 					Beautifully simple click-to-copy CSS effects
 				</h1>
 

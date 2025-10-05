@@ -87,6 +87,13 @@ a:hover
 
 body {
 	transition: background-color 0.3s ease, color 0.3s ease;
+	background-color: var(--color-bg-primary);
+	color: var(--color-text-primary);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
 
