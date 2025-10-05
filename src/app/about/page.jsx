@@ -4,39 +4,62 @@ const AboutPage = () => {
 	return (
 		<div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
 			{/* Hero Section */}
-			<section className="bg-blue-900 dark:bg-gray-800 text-white dark:text-gray-100 py-12 transition-colors duration-300">
+			<section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 text-white dark:text-gray-100 py-20 transition-colors duration-300">
 				<div className="container mx-auto flex flex-col md:flex-row items-center px-6">
 					<div className="md:w-1/2 mb-8 md:mb-0">
-						<h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
-						<p className="text-lg md:text-xl">
-							We are dedicated to providing exceptional services to help your
-							business grow. Our mission is to deliver innovative solutions
-							tailored to your needs.
+						<h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">About Us</h1>
+						<h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+							Designing delightful experiences — one pixel at a time
+						</h2>
+						<p className="text-lg md:text-xl mb-8 text-gray-200 dark:text-gray-300 leading-relaxed">
+							We craft modern, accessible interfaces and components using Next.js and Tailwind — focused on performance, usability and delightful micro-interactions.
 						</p>
+						<div className="flex gap-4">
+							<button className="bg-white text-blue-900 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+								About Me
+							</button>
+							<button className="border border-white text-white font-semibold py-3 px-6 rounded-lg hover:bg-white hover:text-blue-900 transition-colors duration-200">
+								Contact
+							</button>
+						</div>
 					</div>
 					<div className="md:w-1/2">
-						<Image
-							src="/dfd.jpg"
-							alt="About us illustration"
-							width={800}
-							height={600}
-							className="w-full h-auto rounded-lg shadow-lg"
-						/>
+						<div className="relative">
+							<Image
+								src="/programming.avif"
+								alt="About us illustration"
+								width={800}
+								height={600}
+								className="w-full h-auto rounded-2xl shadow-2xl"
+							/>
+						</div>
 					</div>
 				</div>
 			</section>
 
 			{/* Company Mission Section */}
-			<section className="py-12 bg-white dark:bg-gray-900 transition-colors duration-300">
+			<section className="py-16 bg-white dark:bg-gray-900 transition-colors duration-300">
 				<div className="container mx-auto px-6">
-					<h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">
+					<h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900 dark:text-gray-100">
 						Our Mission
 					</h2>
-					<p className="text-lg text-center max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
-						At our company, we aim to revolutionize the way businesses interact
-						with technology. Our goal is to provide solutions that empower your
-						organization, streamline operations, and drive growth.
+					<p className="text-lg max-w-4xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+						We help teams ship faster by building reusable UI components, accessible layouts, and sensible defaults. Our priority is to make interfaces that are beautiful, performant and easy to maintain.
 					</p>
+					<div className="flex flex-wrap gap-3">
+						<span className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium">
+							Next.js
+						</span>
+						<span className="bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200 px-4 py-2 rounded-full text-sm font-medium">
+							TailwindCSS
+						</span>
+						<span className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-4 py-2 rounded-full text-sm font-medium">
+							Accessibility
+						</span>
+						<span className="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 px-4 py-2 rounded-full text-sm font-medium">
+							Performance
+						</span>
+					</div>
 				</div>
 			</section>
 
@@ -50,9 +73,9 @@ const AboutPage = () => {
 						<Image
 							src="/profile-picture.jpg"
 							alt="Gyan Pratap Singh"
-              width={800}
-							height={600}
-							className="rounded-full mx-auto w-48 h-48 object-cover shadow-lg"
+							width={400}
+							height={400}
+							className="rounded-2xl mx-auto w-80 h-80 object-cover shadow-xl"
 						/>
 					</div>
 					{/* About Me Text */}
@@ -92,67 +115,68 @@ const AboutPage = () => {
 			</div>
 
 			{/* Team Section */}
-			<section className="bg-gray-100 dark:bg-gray-800 py-12 transition-colors duration-300">
+			<section className="bg-white dark:bg-gray-900 py-16 transition-colors duration-300">
 				<div className="container mx-auto px-6">
-					<h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">
+					<h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
 						Meet Our Team
 					</h2>
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-						{/* Example Team Member */}
-						<div className="text-center">
-							<Image
-								src="/path/to/team-member.jpg"
-								alt="Team member"
-                width={800}
-							height={600}
-								className="w-32 h-32 mx-auto rounded-full mb-4"
-							/>
-							<h3 className="text-xl font-semibold">John Doe</h3>
-							<p className="text-gray-600">CEO & Founder</p>
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+						{/* Team Member 1 - Gyanthakur */}
+						<div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+							<div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
+								<span className="text-white font-bold text-lg">G</span>
+							</div>
+							<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">Gyanthakur</h3>
+							<p className="text-gray-600 dark:text-gray-400 text-sm mb-2">Contributions: 19</p>
 						</div>
 
-						{/* Add more team members as needed */}
-						<div className="text-center">
-							<Image
-								src="/path/to/team-member2.jpg"
-								alt="Team member"
-                width={800}
-							height={600}
-								className="w-32 h-32 mx-auto rounded-full mb-4"
-							/>
-							<h3 className="text-xl font-semibold">Jane Smith</h3>
-							<p className="text-gray-600">CTO</p>
+						{/* Team Member 2 - wrexrus */}
+						<div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+							<div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-400 to-pink-600 flex items-center justify-center">
+								<span className="text-white font-bold text-lg">W</span>
+							</div>
+							<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">wrexrus</h3>
+							<p className="text-gray-600 dark:text-gray-400 text-sm mb-2">Contributions: 6</p>
 						</div>
 
-						<div className="text-center">
-							<Image
-								src="/path/to/team-member3.jpg"
-								alt="Team member"
-                width={800}
-							height={600}
-								className="w-32 h-32 mx-auto rounded-full mb-4"
-							/>
-							<h3 className="text-xl font-semibold">Emily Johnson</h3>
-							<p className="text-gray-600">Head of Marketing</p>
+						{/* Team Member 3 - siddharthbaleja7 */}
+						<div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+							<div className="w-20 h-20 mx-auto mb-4 rounded-full bg-black dark:bg-gray-700">
+							</div>
+							<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">siddharthbaleja7</h3>
+							<p className="text-gray-600 dark:text-gray-400 text-sm mb-2">Contributions: 3</p>
+						</div>
+
+						{/* Team Member 4 - CodeVoyager3 */}
+						<div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+							<div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-400 to-blue-600 flex items-center justify-center">
+								<span className="text-white font-bold text-lg">C</span>
+							</div>
+							<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">CodeVoyager3</h3>
+							<p className="text-gray-600 dark:text-gray-400 text-sm mb-2">Contributions: 2</p>
 						</div>
 					</div>
-				</div>
-			</section>
 
-			{/* Call to Action */}
-			<section className="bg-blue-900 dark:bg-gray-800 text-white dark:text-gray-100 py-12 transition-colors duration-300">
-				<div className="container mx-auto text-center px-6">
-					<h2 className="text-3xl md:text-4xl font-bold mb-4">Join Us</h2>
-					<p className="text-lg mb-8 text-gray-200 dark:text-gray-300">
-						We are always looking for talented individuals to join our team and
-						help us create cutting-edge solutions.
-					</p>
-					<a
-						href="/careers"
-						className="bg-yellow-500 hover:bg-yellow-600 dark:bg-yellow-600 dark:hover:bg-yellow-700 text-black dark:text-gray-900 font-bold py-3 px-6 rounded-lg transition-colors duration-200"
-					>
-						Explore Careers
-					</a>
+					{/* Additional Team Members Row */}
+					<div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-md mx-auto mt-8">
+						{/* Team Member 5 - VJ */}
+						<div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+							<div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center">
+								<span className="text-white font-bold text-lg">VJ</span>
+							</div>
+							<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">VJ</h3>
+							<p className="text-gray-600 dark:text-gray-400 text-sm mb-2">Contributor</p>
+						</div>
+
+						{/* Team Member 6 - Another Member */}
+						<div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+							<div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+								<span className="text-white font-bold text-lg">🎯</span>
+							</div>
+							<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">Contributor</h3>
+							<p className="text-gray-600 dark:text-gray-400 text-sm mb-2">Community Member</p>
+						</div>
+					</div>
 				</div>
 			</section>
 		</div>
