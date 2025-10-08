@@ -1,6 +1,24 @@
+"use client"
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const AboutPage = () => {
+	const [contributors, setContributors] = useState([]);
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		fetch('https://api.github.com/repos/Gyanthakur/yourcss_contribution/contributors')
+			.then(res => res.json())
+			.then(data => {
+				setContributors(data);
+				setLoading(false);
+			})
+			.catch(err => {
+				console.error('Error fetching contributors:', err);
+				setLoading(false);
+			});
+	}, []);
+
 	return (
 		<div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
 			{/* Hero Section */}
@@ -25,11 +43,9 @@ const AboutPage = () => {
 					</div>
 					<div className="md:w-1/2">
 						<div className="relative">
-							<Image
+							<img
 								src="/programming.avif"
 								alt="About us illustration"
-								width={800}
-								height={600}
 								className="w-full h-auto rounded-2xl shadow-2xl"
 							/>
 						</div>
@@ -100,7 +116,7 @@ const AboutPage = () => {
 						<p className="mt-4 text-lg leading-8 text-justify">
 							Apart from coding, I have a strong interest in algorithmic problem
 							solving, always looking to optimize performance and avoid common
-							pitfalls such as time limit exceeded (TLE) issues. I’m also
+							pitfalls such as time limit exceeded (TLE) issues. I'm also
 							recognized as a Postman Student Expert, Git Certified Specialist,
 							and have developed a variety of projects such as a job portal app,
 							notes store, and food ordering web app.
@@ -120,63 +136,35 @@ const AboutPage = () => {
 					<h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
 						Meet Our Team
 					</h2>
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-						{/* Team Member 1 - Gyanthakur */}
-						<div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-							<div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center">
-								<span className="text-white font-bold text-lg">G</span>
-							</div>
-							<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">Gyanthakur</h3>
-							<p className="text-gray-600 dark:text-gray-400 text-sm mb-2">Contributions: 19</p>
+					{loading ? (
+						<div className="text-center text-gray-600 dark:text-gray-400">Loading contributors...</div>
+					) : (
+						<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+							{contributors.map((contributor) => (
+								<div key={contributor.id} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+									<img 
+										src={contributor.avatar_url} 
+										alt={contributor.login}
+										className="w-20 h-20 mx-auto mb-4 rounded-full"
+									/>
+									<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">
+										{contributor.login}
+									</h3>
+									<p className="text-gray-600 dark:text-gray-400 text-sm mb-2">
+										Contributions: {contributor.contributions}
+									</p>
+									<a 
+										href={contributor.html_url}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-blue-600 dark:text-blue-400 text-sm hover:underline"
+									>
+										View Profile
+									</a>
+								</div>
+							))}
 						</div>
-
-						{/* Team Member 2 - wrexrus */}
-						<div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-							<div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-400 to-pink-600 flex items-center justify-center">
-								<span className="text-white font-bold text-lg">W</span>
-							</div>
-							<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">wrexrus</h3>
-							<p className="text-gray-600 dark:text-gray-400 text-sm mb-2">Contributions: 6</p>
-						</div>
-
-						{/* Team Member 3 - siddharthbaleja7 */}
-						<div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-							<div className="w-20 h-20 mx-auto mb-4 rounded-full bg-black dark:bg-gray-700">
-							</div>
-							<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">siddharthbaleja7</h3>
-							<p className="text-gray-600 dark:text-gray-400 text-sm mb-2">Contributions: 3</p>
-						</div>
-
-						{/* Team Member 4 - CodeVoyager3 */}
-						<div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-							<div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-400 to-blue-600 flex items-center justify-center">
-								<span className="text-white font-bold text-lg">C</span>
-							</div>
-							<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">CodeVoyager3</h3>
-							<p className="text-gray-600 dark:text-gray-400 text-sm mb-2">Contributions: 2</p>
-						</div>
-					</div>
-
-					{/* Additional Team Members Row */}
-					<div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-md mx-auto mt-8">
-						{/* Team Member 5 - VJ */}
-						<div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-							<div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center">
-								<span className="text-white font-bold text-lg">VJ</span>
-							</div>
-							<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">VJ</h3>
-							<p className="text-gray-600 dark:text-gray-400 text-sm mb-2">Contributor</p>
-						</div>
-
-						{/* Team Member 6 - Another Member */}
-						<div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-							<div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
-								<span className="text-white font-bold text-lg">🎯</span>
-							</div>
-							<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">Contributor</h3>
-							<p className="text-gray-600 dark:text-gray-400 text-sm mb-2">Community Member</p>
-						</div>
-					</div>
+					)}
 				</div>
 			</section>
 		</div>
