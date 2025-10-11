@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 // import style from "./form.Module.css";
 import style from "./form.module.css";
 import { Copy } from "phosphor-react";
+import FavoriteButton from "@/components/FavoriteButton";
 
 // Modal component to display both HTML and CSS code with copy functionality
 const CodeModal = ({ htmlCode, cssCode, onClose, onCopyHtml, onCopyCss }) => {
@@ -159,11 +160,15 @@ const Form = () => {
 								Login
 							</button>
 						</form>
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form1.html", "form1.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-1", type: "form", title: "Login Form", htmlFile: "form1.html", cssFile: "form1.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form1.html", "form1.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -201,11 +206,15 @@ const Form = () => {
 								Register
 							</button>
 						</form>
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form2.html", "form2.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-2", type: "form", title: "Register Form", htmlFile: "form2.html", cssFile: "form2.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form2.html", "form2.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -242,11 +251,15 @@ const Form = () => {
 								Send
 							</button>
 						</form>
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form3.html", "form3.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-3", type: "form", title: "Contact Us Form", htmlFile: "form3.html", cssFile: "form3.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form3.html", "form3.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -282,11 +295,15 @@ const Form = () => {
 								Submit
 							</button>
 						</form>
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form4.html", "form4.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-4", type: "form", title: "Survey Form", htmlFile: "form4.html", cssFile: "form4.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form4.html", "form4.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -323,11 +340,15 @@ const Form = () => {
 								Book
 							</button>
 						</form>
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form5.html", "form5.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-5", type: "form", title: "Booking Form", htmlFile: "form5.html", cssFile: "form5.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form5.html", "form5.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -373,11 +394,15 @@ const Form = () => {
 								Apply
 							</button>
 						</form>
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex duration-500 hover:scale-105 items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form6.html", "form6.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-6", type: "form", title: "Job Application", htmlFile: "form6.html", cssFile: "form6.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form6.html", "form6.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -413,11 +438,15 @@ const Form = () => {
 								Submit
 							</button>
 						</form>
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form7.html", "form7.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-7", type: "form", title: "Feedback Form", htmlFile: "form7.html", cssFile: "form7.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form7.html", "form7.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -466,11 +495,15 @@ const Form = () => {
 								Register
 							</button>
 						</form>
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex duration-500 hover:scale-105 items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form8.html", "form8.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-8", type: "form", title: "Event Registration", htmlFile: "form8.html", cssFile: "form8.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form8.html", "form8.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -515,11 +548,15 @@ const Form = () => {
 								Update
 							</button>
 						</form>
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex  items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form9.html", "form9.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-9", type: "form", title: "Profile Update", htmlFile: "form9.html", cssFile: "form9.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form9.html", "form9.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -551,11 +588,15 @@ const Form = () => {
 								Subscribe
 							</button>
 						</form>
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form10.html", "form10.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-10", type: "form", title: "Newsletter Subscription", htmlFile: "form10.html", cssFile: "form10.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form10.html", "form10.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -650,11 +691,15 @@ const Form = () => {
 							</button>
 						</form>
 
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form11.html", "form11.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-11", type: "form", title: "Inquiry Submission", htmlFile: "form11.html", cssFile: "form11.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form11.html", "form11.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -746,11 +791,15 @@ const Form = () => {
 							</button>
 						</form>
 
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form12.html", "form12.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-12", type: "form", title: "Contact Us (2)", htmlFile: "form12.html", cssFile: "form12.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form12.html", "form12.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -841,11 +890,15 @@ const Form = () => {
 							</button>
 						</form>
 
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form13.html", "form13.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-13", type: "form", title: "Feedback (2)", htmlFile: "form13.html", cssFile: "form13.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form13.html", "form13.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -936,11 +989,15 @@ const Form = () => {
 							</button>
 						</form>
 
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form14.html", "form14.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-14", type: "form", title: "Inquiry (2)", htmlFile: "form14.html", cssFile: "form14.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form14.html", "form14.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -1032,11 +1089,15 @@ const Form = () => {
 							</button>
 						</form>
 
-						<div
-							className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
-							onClick={() => handleViewCodeClick("form15.html", "form15.css")}
-						>
-							<Copy size={25} />
+						<div className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2">
+							<FavoriteButton item={{ id: "form-15", type: "form", title: "Registration Form", htmlFile: "form15.html", cssFile: "form15.css" }} />
+							<button
+								className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full cursor-pointer"
+								onClick={() => handleViewCodeClick("form15.html", "form15.css")}
+								aria-label="View code"
+							>
+								<Copy size={20} />
+							</button>
 						</div>
 					</div>
 				</div>
