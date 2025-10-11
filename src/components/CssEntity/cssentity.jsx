@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import style from "./cssentity.module.css";
 import { Copy } from "phosphor-react";
+import FavoriteButton from "@/components/FavoriteButton";
 
 // Modal component to display both HTML and CSS code with copy functionality
 const CodeModal = ({ htmlCode, cssCode, onClose, onCopyHtml, onCopyCss }) => {
@@ -72,6 +73,186 @@ const CssEntity = () => {
 	const [htmlCodeToShow, setHtmlCodeToShow] = useState("");
 	const [cssCodeToShow, setCssCodeToShow] = useState("");
 
+	const snippets = useMemo(
+		() => [
+			{
+				id: "bubble-ltr",
+				title: "Bubble ->",
+				htmlFile: "bubbleLeftToRight1.html",
+				cssFile: "bubbleLeftToRight1.css",
+				render: () => <button className={style.bubbleLeftToRight}>Bubble -&gt;</button>,
+			},
+			{
+				id: "bubble-rtl",
+				title: "Bubble <-",
+				htmlFile: "bubbleRightToLeft.html",
+				cssFile: "bubbleRightToLeft.css",
+				render: () => <button className={style.bubbleRightToLeft}>Bubble &lt;-</button>,
+			},
+			{
+				id: "bubble-down",
+				title: "Bubble ↓",
+				htmlFile: "bubbleUpToDown.html",
+				cssFile: "bubbleUpToDown.css",
+				render: () => <button className={style.bubbleUpToDown}>Bubble &darr;</button>,
+			},
+			{
+				id: "wave",
+				title: "Wave",
+				htmlFile: "wave.html",
+				cssFile: "wave.css",
+				render: () => (
+					<div className={style.wave}>
+						<div>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				),
+			},
+			{
+				id: "balls",
+				title: "Balls",
+				htmlFile: "balls.html",
+				cssFile: "balls.css",
+				render: () => (
+					<div className={style.balls}>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				),
+			},
+			{
+				id: "fill-rect",
+				title: "Fill Rect",
+				htmlFile: "fillRact.html",
+				cssFile: "fillRact.css",
+				render: () => (
+					<div className={style.fillRact}>
+						<div></div>
+					</div>
+				),
+			},
+			{
+				id: "neon",
+				title: "Neon Button",
+				htmlFile: "neon.html",
+				cssFile: "neon.css",
+				render: () => (
+					<div className={style.neon}>
+						<button>...</button>
+					</div>
+				),
+			},
+			{
+				id: "loader",
+				title: "Loader",
+				htmlFile: "loader.html",
+				cssFile: "loader.css",
+				render: () => (
+					<div className={style.loader}>
+						<div></div>
+					</div>
+				),
+			},
+			{
+				id: "cube",
+				title: "Cube",
+				htmlFile: "cube.html",
+				cssFile: "cube.css",
+				render: () => (
+					<div className={style.cube}>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				),
+			},
+			{
+				id: "glass-card",
+				title: "Glass Card",
+				htmlFile: "glass.html",
+				cssFile: "glass.css",
+				render: () => (
+					<div className={style.glassCard}>
+						<h2>Glassmorphism Card</h2>
+						<p>Beautiful transparent, frosted glass effect.</p>
+					</div>
+				),
+			},
+			{
+				id: "search-bar",
+				title: "Search Bar",
+				htmlFile: "searchBar.html",
+				cssFile: "searchBar.css",
+				render: () => (
+					<div className={style.searchContainer}>
+						<input type="text" className={style.searchBar} placeholder="Search..." />
+						<div className={style.searchBtn}>🔍</div>
+					</div>
+				),
+			},
+			{
+				id: "neumorphism-btn",
+				title: "Neumorphism Button",
+				htmlFile: "neuButton.html",
+				cssFile: "neuButton.css",
+				render: () => <button className={style.neuButton}>Click Me</button>,
+			},
+			{
+				id: "animated-link",
+				title: "Animated Link",
+				htmlFile: "animatedLink.html",
+				cssFile: "animatedLink.css",
+				render: () => (
+					<a href="#" className={style.animatedLink}>
+						Hover Me
+					</a>
+				),
+			},
+			{
+				id: "card-3d",
+				title: "3D Card",
+				htmlFile: "card3d.html",
+				cssFile: "card3d.css",
+				render: () => (
+					<div className={style.card3d}>
+						<div className={style.cardcontent}>
+							<h3>Hover me</h3>
+							<a href="#" className={style.btn3d}>
+								Learn More
+							</a>
+						</div>
+					</div>
+				),
+			},
+			{
+				id: "card",
+				title: "Card",
+				htmlFile: "card.html",
+				cssFile: "card.css",
+				render: () => (
+					<div className={style.card}>
+						<img src="./image.webp" alt="card image" className={style.cardImg} />
+						<div className={style.cardContent}>
+							<h3>Card Title</h3>
+							<a href="" className={style.cardBtn}>
+								Read More
+							</a>
+						</div>
+					</div>
+				),
+			},
+		],
+		[]
+	);
+
 	// Function to fetch both CSS and HTML file content and open the modal
 	const handleViewCodeClick = async (htmlFileName, cssFileName) => {
 		try {
@@ -104,9 +285,7 @@ const CssEntity = () => {
 	};
 
 	return (
-		// <div className="grid grid-cols-5 gap-4">
 		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-4 bg-white dark:bg-gray-900 transition-colors duration-300">
-			{/* Display modal with both HTML and CSS code when showCodeModal is true */}
 			{showCodeModal && (
 				<CodeModal
 					htmlCode={htmlCodeToShow}
@@ -117,268 +296,28 @@ const CssEntity = () => {
 				/>
 			)}
 
-			{/* Example Component for Bubble Left to Right */}
-			<div className="ml-16 m-10 hover:bg-zinc-400 dark:hover:bg-gray-600 w-40 h-40 flex justify-center items-center relative group bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300 shadow-sm hover:shadow-md">
-				<button className={style.bubbleLeftToRight}>Bubble -&gt;</button>
+			{snippets.map((snip) => (
 				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() =>
-						handleViewCodeClick(
-							"bubbleLeftToRight1.html",
-							"bubbleLeftToRight1.css"
-						)
-					}
+					key={snip.id}
+					className="ml-16 m-10 hover:bg-zinc-400 dark:hover:bg-gray-600 w-40 h-40 flex justify-center items-center relative group bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300 shadow-sm hover:shadow-md"
 				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-
-			{/* Example Component for Bubble Right to Left */}
-			<div className="ml-16 m-10 hover:bg-zinc-400 dark:hover:bg-gray-600 w-40 h-40 flex justify-center items-center relative group bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300 shadow-sm hover:shadow-md">
-				<button className={style.bubbleRightToLeft}>Bubble &lt;-</button>
-				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() =>
-						handleViewCodeClick(
-							"bubbleRightToLeft.html",
-							"bubbleRightToLeft.css"
-						)
-					}
-				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-			{/* Example Component for Bubble Right to Left */}
-
-			{/* component start here  */}
-			<div className="ml-16 m-10 hover:bg-zinc-400 dark:hover:bg-gray-600 w-40 h-40 flex justify-center items-center relative group bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300 shadow-sm hover:shadow-md">
-				<button className={style.bubbleUpToDown}>Bubble &darr;</button>
-				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() =>
-						handleViewCodeClick("bubbleUpToDown.html", "bubbleUpToDown.css")
-					}
-				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-
-			{/* component end here  */}
-
-			{/* Add more components with both HTML and CSS buttons as needed */}
-
-			<div className="ml-16 m-10 hover:bg-zinc-400 dark:hover:bg-gray-600 w-40 h-40 flex justify-center items-center relative group bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300 shadow-sm hover:shadow-md ">
-				<div className={style.wave}>
-					<div>
-						<span></span>
-						<span></span>
-						<span></span>
-						<span></span>
+					{snip.render()}
+					<div
+						className="absolute top-2 right-2 hidden group-hover:flex items-center gap-2"
+					>
+						<FavoriteButton
+							item={{ id: snip.id, type: "css", title: snip.title, htmlFile: snip.htmlFile, cssFile: snip.cssFile }}
+						/>
+						<button
+							className="flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
+							onClick={() => handleViewCodeClick(snip.htmlFile, snip.cssFile)}
+							aria-label="View code"
+						>
+							<Copy size={20} className="text-gray-600 dark:text-gray-300" />
+						</button>
 					</div>
 				</div>
-				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() => handleViewCodeClick("wave.html", "wave.css")}
-				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-
-			{/* component start here  */}
-			<div className="ml-16 m-10 hover:bg-zinc-400 dark:hover:bg-gray-600 w-40 h-40 flex justify-center items-center relative group bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300 shadow-sm hover:shadow-md">
-				<div className={style.balls}>
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
-
-				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() => handleViewCodeClick("balls.html", "balls.css")}
-				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-
-			{/* component end here  */}
-			{/* component start here  */}
-			<div className="ml-16 m-10 hover:bg-zinc-400 dark:hover:bg-gray-600 w-40 h-40 flex justify-center items-center relative group bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300 shadow-sm hover:shadow-md">
-				<div className={style.fillRact}>
-					<div></div>
-				</div>
-
-				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() => handleViewCodeClick("fillRact.html", "fillRact.css")}
-				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-
-			{/* component end here  */}
-			{/* component start here  */}
-			<div className="ml-16 m-10 hover:bg-sky-500 w-40 h-40 flex justify-center items-center relative group">
-				<div className={style.neon}>
-					<button>...</button>
-				</div>
-
-				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() => handleViewCodeClick("neon.html", "neon.css")}
-				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-
-			{/* component end here  */}
-
-			{/* component start here  */}
-			<div className="ml-16 m-10 hover:bg-zinc-400 dark:hover:bg-gray-600 w-40 h-40 flex justify-center items-center relative group bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300 shadow-sm hover:shadow-md">
-				<div className={style.loader}>
-					<div></div>
-				</div>
-
-				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() => handleViewCodeClick("loader.html", "loader.css")}
-				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-
-			{/* component end here  */}
-
-			{/* component start here  */}
-			<div className="ml-16 m-10 hover:bg-sky-400 w-40 h-40 flex justify-center items-center relative group">
-				<div className={style.cube}>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
-				</div>
-
-				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() => handleViewCodeClick("cube.html", "cube.css")}
-				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-
-			{/* component end here  */}
-			{/* component start here  */}
-			<div className="ml-16 m-10 hover:bg-sky-400 w-40 h-40 flex justify-center items-center relative group">
-				<div className={style.glassCard}>
-					<h2>Glassmorphism Card</h2>
-					<p>Beautiful transparent, frosted glass effect.</p>
-				</div>
-
-				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() => handleViewCodeClick("glass.html", "glass.css")}
-				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-
-			{/* component start here  */}
-			<div className="ml-16 m-10 hover:bg-zinc-400 dark:hover:bg-gray-600 w-40 h-40 flex justify-center items-center relative group bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300 shadow-sm hover:shadow-md">
-				<div className={style.searchContainer}>
-					<input
-						type="text"
-						className={style.searchBar}
-						placeholder="Search..."
-					/>
-					<div className={style.searchBtn}>🔍</div>
-				</div>
-
-				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() => handleViewCodeClick("searchBar.html", "searchBar.css")}
-				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-
-			{/* component end here  */}
-			{/* component start here  */}
-			<div className="ml-16 m-10 w-36 h-40 hover:bg-zinc-600 flex justify-center items-center relative group">
-				<button className={style.neuButton}>Click Me</button>
-
-				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() => handleViewCodeClick("neuButton.html", "neuButton.css")}
-				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-
-			{/* component end here  */}
-			{/* component start here  */}
-			<div className="ml-16 m-10 w-36 h-40 hover:bg-zinc-600 flex justify-center items-center relative group">
-				<a href="#" class={style.animatedLink}>
-					Hover Me
-				</a>
-
-				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() =>
-						handleViewCodeClick("animatedLink.html", "animatedLink.css")
-					}
-				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-
-			{/* component end here  */}
-			{/* component start here  */}
-			<div className="ml-16 m-10 w-36 h-40 flex justify-center items-center relative group">
-				<div className={style.card3d}>
-					<div className={style.cardcontent}>
-						<h3>Hover me</h3>
-						
-						<a href="#" className={style.btn3d}>
-							Learn More
-						</a>
-					</div>
-				</div>
-
-				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() =>
-						handleViewCodeClick("card3d.html", "card3d.css")
-					}
-				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-
-			{/* component end here  */}
-
-			{/* component start here  */}
-			<div className="ml-16 m-10 h w-40 h-40 flex justify-center items-center relative group">
-				<div className={style.card}>
-					{/* <img src="image.jpg" alt="Card Image" class="card-img"> */}
-					<img src="./image.webp" alt="card image" className={style.cardImg} />
-					<div className={style.cardContent}>
-						<h3>Card Title</h3>
-						<a href="" className={style.cardBtn}>
-							Read More
-						</a>
-					</div>
-				</div>
-
-				<div
-					className="absolute top-2 right-2 hidden group-hover:flex items-center justify-center w-8 h-8 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-full cursor-pointer transition-colors duration-200"
-					onClick={() => handleViewCodeClick("card.html", "card.css")}
-				>
-					<Copy size={20} className="text-gray-600 dark:text-gray-300" />
-				</div>
-			</div>
-
-			{/* component end here  */}
+			))}
 		</div>
 	);
 };

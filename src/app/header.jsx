@@ -38,6 +38,9 @@ const Header = () => {
 								<a href="/about" className="hover:text-yellow-400 transition">
 									About
 								</a>
+								<a href="/favorites" className="hover:text-yellow-400 transition">
+									Favorites
+								</a>
 								<a
 									href="/services"
 									className="hover:text-yellow-400 transition"
@@ -80,6 +83,9 @@ const Header = () => {
 							</a>
 							<a href="/about" className="hover:text-yellow-400 transition">
 								About
+							</a>
+							<a href="/favorites" className="hover:text-yellow-400 transition">
+								Favorites
 							</a>
 							<a href="/services" className="hover:text-yellow-400 transition">
 								Services
