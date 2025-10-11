@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const AboutPage = () => {
 	return (
@@ -15,18 +16,25 @@ const AboutPage = () => {
 							We craft modern, accessible interfaces and components using Next.js and Tailwind — focused on performance, usability and delightful micro-interactions.
 						</p>
 						<div className="flex gap-4">
-							<button className="bg-white text-blue-900 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+							<Link
+								href="#about-me"
+								className="bg-white text-blue-900 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+								scroll
+							>
 								About Me
-							</button>
-							<button className="border border-white text-white font-semibold py-3 px-6 rounded-lg hover:bg-white hover:text-blue-900 transition-colors duration-200">
+							</Link>
+							<Link
+								href="/contact"
+								className="border border-white text-white font-semibold py-3 px-6 rounded-lg hover:bg-white hover:text-blue-900 transition-colors duration-200"
+							>
 								Contact
-							</button>
+							</Link>
 						</div>
 					</div>
 					<div className="md:w-1/2">
 						<div className="relative">
 							<Image
-								src="/programming.avif"
+								src="/programming.png"
 								alt="About us illustration"
 								width={800}
 								height={600}
@@ -65,7 +73,7 @@ const AboutPage = () => {
 
 			{/* about me  */}
 
-			<div className="container mx-auto mt-24 px-4 py-8 bg-gray-50 dark:bg-gray-800 rounded-lg transition-colors duration-300">
+			<div id="about-me" className="container mx-auto mt-24 px-4 py-8 bg-gray-50 dark:bg-gray-800 rounded-lg transition-colors duration-300 scroll-mt-28 md:scroll-mt-32">
 				<h1 className="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">About Me</h1>
 				<div className="flex flex-col md:flex-row items-center justify-center">
 					{/* Image Section */}
