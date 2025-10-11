@@ -89,6 +89,16 @@ body {
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
 
 a, button, input, textarea, select {
 	transition: all 0.2s ease;

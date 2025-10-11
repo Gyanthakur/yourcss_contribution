@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const AboutPage = () => {
 	return (
@@ -21,7 +22,7 @@ const AboutPage = () => {
 							</button>
 							<button className="border border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white hover:text-blue-800 transition">
 								Contact
-							</button>
+							</Link>
 						</div>
 					</div>
 
