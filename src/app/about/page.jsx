@@ -112,7 +112,7 @@ const AboutPage = () => {
 						</p>
 					</div>
 				</div>
-			</section>
+			</div>
 
 			{/* Team Section */}
 			<section className="bg-white dark:bg-gray-900 py-20 transition-colors duration-300">
