@@ -317,7 +317,7 @@ const Form = () => {
 				</div>
 
 				{/* Form 5 (3D Form) */}
-				<div className="bg-blue-500 hover:bg-purple-500 transform transition-transform duration-700 hover:rotate-45 hover:scale-105 flex justify-center items-center relative group p-6 rounded-lg shadow-2xl perspective-1000">
+				<div className="bg-blue-500 hover:bg-purple-500 transform transition-transform duration-700 hover:scale-105 flex justify-center items-center relative group p-6 rounded-lg shadow-2xl perspective-1000">
 					<div className="loginForm transform hover:rotate-y-45">
 						<form>
 							<h2 className="text-center mb-4 text-white">Booking</h2>
