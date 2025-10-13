@@ -36,7 +36,7 @@ const AboutPage = () => {
 					<div className="md:w-1/2 relative">
 						<div className="rounded-3xl overflow-hidden shadow-2xl">
 							<Image
-								src="/programming.png"
+								src="/programming.avif"
 								alt="About us illustration"
 								width={800}
 								height={600}
