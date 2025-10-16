@@ -16,19 +16,19 @@ const AboutPage = () => {
 							speed to perfection.
 						</p>
 						<div className="flex gap-4">
-							<button className="bg-white text-blue-900 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition">
+							<a href="#about-me" className="bg-white text-blue-900 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition">
 								About Me
-							</button>
-							<button className="border border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white hover:text-blue-800 transition">
+							</a>
+							<a href="/contact" className="border border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white hover:text-blue-800 transition">
 								Contact
-							</button>
+							</a>
 						</div>
 					</div>
 
 					<div className="md:w-1/2 relative">
 						<div className="rounded-3xl overflow-hidden shadow-2xl">
 							<Image
-								src="/programming.avif"
+								src="/programming.webp"
 								alt="Design Illustration"
 								width={600}
 								height={400}
@@ -67,7 +67,7 @@ const AboutPage = () => {
 			</section>
 
 			{/* About Me Section */}
-			<section className="py-20 bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+			<section id="about-me" className="py-20 bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
 				<div className="container mx-auto px-6 flex flex-col md:flex-row items-center">
 					<div className="md:w-1/3 flex justify-center mb-8 md:mb-0">
 						<Image

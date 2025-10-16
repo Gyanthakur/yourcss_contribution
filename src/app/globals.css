@@ -89,6 +89,11 @@ body {
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Smooth in-page anchor scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 
 a, button, input, textarea, select {
 	transition: all 0.2s ease;
