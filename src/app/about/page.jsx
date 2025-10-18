@@ -17,10 +17,16 @@ const AboutPage = () => {
 							speed to perfection.
 						</p>
 						<div className="flex gap-4">
-							<a href="#about-me" className="bg-white text-blue-900 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition">
+							<a
+								href="#about-me"
+								className="bg-white text-blue-900 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition"
+							>
 								About Me
 							</a>
-							<a href="/contact" className="border border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white hover:text-blue-800 transition">
+							<a
+								href="/contact"
+								className="border border-white text-white font-semibold py-3 px-6 rounded-full hover:bg-white hover:text-blue-800 transition"
+							>
 								Contact
 							</a>
 						</div>
