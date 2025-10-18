@@ -69,47 +69,44 @@ const AboutPage = () => {
 
 			{/* About Me Section */}
 			<section id="about-me" className="py-20 bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
-				<div className="container mx-auto px-6 flex flex-col md:flex-row items-center">
-					<div className="md:w-1/3 flex justify-center mb-8 md:mb-0">
-			{/* about me  */}
-
-			<div id="about-me" className="container mx-auto mt-24 px-4 py-8 bg-gray-50 dark:bg-gray-800 rounded-lg transition-colors duration-300 scroll-mt-28 md:scroll-mt-32">
-				<h1 className="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">About Me</h1>
-				<div className="flex flex-col md:flex-row items-center justify-center">
-					{/* Image Section */}
-					<div className="w-full md:w-1/3 mb-6 md:mb-0">
-						<Image
-							src="/profile-picture.jpg"
-							alt="Gyan Pratap Singh"
-							width={350}
-							height={350}
-							className="rounded-3xl shadow-xl object-cover"
-						/>
-					</div>
-					<div className="md:w-2/3 md:pl-10">
-						<h2 className="text-4xl font-bold mb-6 text-blue-800 dark:text-blue-400">
-							About Me
-						</h2>
-						<p className="text-lg leading-relaxed mb-4">
-							Hi! I’m <span className="font-bold">Gyan Pratap Singh</span>, a
-							software developer passionate about creating scalable, visually
-							appealing, and performance-driven web applications. I’m pursuing
-							B.Tech in Computer Science at Kamla Nehru Institute of Technology,
-							with a strong focus on frontend technologies.
-						</p>
-						<p className="text-lg leading-relaxed mb-4">
-							My work revolves around crafting dynamic user interfaces,
-							contributing to open-source projects, and exploring innovative
-							ways to merge design with technology.
-						</p>
-						<p className="text-lg leading-relaxed">
-							I’ve worked on several projects including e-learning platforms,
-							job portals, and AI-integrated apps — using tools like Next.js,
-							MongoDB, Clerk, and Supabase. Always learning. Always improving.
-						</p>
+				<div className="container mx-auto px-6">
+					<h1 className="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">About Me</h1>
+					<div className="flex flex-col md:flex-row items-center justify-center">
+						{/* Image Section */}
+						<div className="w-full md:w-1/3 mb-6 md:mb-0 flex justify-center">
+							<Image
+								src="/profile-picture.jpg"
+								alt="Gyan Pratap Singh"
+								width={350}
+								height={350}
+								className="rounded-3xl shadow-xl object-cover"
+							/>
+						</div>
+						<div className="md:w-2/3 md:pl-10">
+							<h2 className="text-4xl font-bold mb-6 text-blue-800 dark:text-blue-400">
+								About Me
+							</h2>
+							<p className="text-lg leading-relaxed mb-4">
+								Hi! I’m <span className="font-bold">Gyan Pratap Singh</span>, a
+								software developer passionate about creating scalable, visually
+								appealing, and performance-driven web applications. I’m pursuing
+								B.Tech in Computer Science at Kamla Nehru Institute of Technology,
+								with a strong focus on frontend technologies.
+							</p>
+							<p className="text-lg leading-relaxed mb-4">
+								My work revolves around crafting dynamic user interfaces,
+								contributing to open-source projects, and exploring innovative
+								ways to merge design with technology.
+							</p>
+							<p className="text-lg leading-relaxed">
+								I’ve worked on several projects including e-learning platforms,
+								job portals, and AI-integrated apps — using tools like Next.js,
+								MongoDB, Clerk, and Supabase. Always learning. Always improving.
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 
 			{/* Team Section */}
 			<section className="bg-white dark:bg-gray-900 py-20 transition-colors duration-300">

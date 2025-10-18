@@ -91,8 +91,6 @@ body {
 
 /* Smooth in-page anchor scrolling */
 html {
-  scroll-behavior: smooth;
-html {
 	scroll-behavior: smooth;
 }
 
