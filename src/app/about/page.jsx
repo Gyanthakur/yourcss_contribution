@@ -74,17 +74,12 @@ const AboutPage = () => {
 			</section>
 
 			{/* About Me Section */}
-			<section
-				id="about-me"
-				className="py-20 bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300"
-			>
-				<div className="container mx-auto mt-10 px-4 py-8 bg-gray-50 dark:bg-gray-800 rounded-lg transition-colors duration-300 scroll-mt-28 md:scroll-mt-32">
-					<h1 className="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">
-						About Me
-					</h1>
+			<section id="about-me" className="py-20 bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+				<div className="container mx-auto px-6">
+					<h1 className="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">About Me</h1>
 					<div className="flex flex-col md:flex-row items-center justify-center">
 						{/* Image Section */}
-						<div className="w-full md:w-1/3 mb-6 md:mb-0">
+						<div className="w-full md:w-1/3 mb-6 md:mb-0 flex justify-center">
 							<Image
 								src="/profile-picture.jpg"
 								alt="Gyan Pratap Singh"
@@ -101,8 +96,8 @@ const AboutPage = () => {
 								Hi! I’m <span className="font-bold">Gyan Pratap Singh</span>, a
 								software developer passionate about creating scalable, visually
 								appealing, and performance-driven web applications. I’m pursuing
-								B.Tech in Computer Science at Kamla Nehru Institute of
-								Technology, with a strong focus on frontend technologies.
+								B.Tech in Computer Science at Kamla Nehru Institute of Technology,
+								with a strong focus on frontend technologies.
 							</p>
 							<p className="text-lg leading-relaxed mb-4">
 								My work revolves around crafting dynamic user interfaces,
