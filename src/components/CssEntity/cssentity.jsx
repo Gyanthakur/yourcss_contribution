@@ -285,7 +285,7 @@ const CssEntity = () => {
 	};
 
 	return (
-		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-4 bg-white dark:bg-gray-900 transition-colors duration-300">
+		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 p-8 bg-white dark:bg-gray-900 transition-colors duration-300 justify-items-center">
 			{showCodeModal && (
 				<CodeModal
 					htmlCode={htmlCodeToShow}
@@ -299,7 +299,7 @@ const CssEntity = () => {
 			{snippets.map((snip) => (
 				<div
 					key={snip.id}
-					className="ml-16 m-10 hover:bg-zinc-400 dark:hover:bg-gray-600 w-40 h-40 flex justify-center items-center relative group bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 transition-colors duration-300 shadow-sm hover:shadow-md"
+					className="hover:bg-zinc-400 dark:hover:bg-gray-600 w-48 h-48 flex justify-center items-center relative group bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
 				>
 					{snip.render()}
 					<div
