@@ -1,12 +1,22 @@
 <p align="center">
-  <img src="./public/logo3.png" alt="Project Logo" width="200" alt="YourCSS Banner"/>
+  <img src="./public/logo3.png" alt="Project Logo" width="200"/>
 </p>
 
 <div align="center">
 
-#  YourCSS Project
+# YourCSS Project
 
-### *Your One-Stop Destination for Beautiful CSS Designs*
+### *Your One-Stop Destination for Beautiful CSS Components*
+
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?logo=tailwind-css)](https://tailwindcss.com)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+[![Contributors](https://img.shields.io/github/contributors/Arihant2312/yourcss)](https://github.com/Arihant2312/yourcss/graphs/contributors)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE.md)
+[![Stars](https://img.shields.io/github/stars/Arihant2312/yourcss)](https://github.com/Arihant2312/yourcss/stargazers)
+
+[🌟 Live Demo](https://yourcss.vercel.app) • [📘 Documentation](./docs) • [🤝 Contributing](./CONTRIBUTING.md) • [❤️ Sponsor](https://github.com/sponsors/Arihant2312)
 
 [![Hacktoberfest 2025](https://img.shields.io/badge/Hacktoberfest-2025-blueviolet.svg)](https://hacktoberfest.com/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
@@ -21,83 +31,172 @@
 
 ---
 
-## 📑 Table of Contents
+## 🌟 Overview
 
-- [About the Project](#-about-the-project)
-- [Screenshots](#-screenshots)
-- [Features](#-features)
-- [Technologies Used](#️-technologies-used)
-- [Installation](#-installation)
-- [Contributing](#-contributing)
-- [Community](#-community)
-- [Contact](#-contact)
-- [License](#-license)
-- [Acknowledgements](#-acknowledgements)
-- [Show Your Support](#-show-your-support)
+YourCSS is a modern, open-source component library showcasing beautiful CSS designs and animations. Our mission is to provide developers with ready-to-use, customizable CSS components that enhance web applications with minimal effort.
+
+### 🎯 Key Features
+
+- **80+ Pre-built Components**: Buttons, cards, forms, loaders, and more
+- **Copy & Paste Ready**: Get the code with a single click
+- **Live Preview**: Interact with components before using them
+- **Responsive Design**: All components are mobile-friendly
+- **Dark Mode Support**: Built-in light/dark themes
+- **Zero Dependencies**: Pure CSS solutions - no external libraries required
+- **Customization**: Easy-to-modify variables for your brand colors
+- **TypeScript Support**: Full type definitions included
+- **Accessibility**: WCAG 2.1 compliant components
+
+### 🎨 Component Categories
+
+- 🔘 **Buttons & Links** - 15 variations
+- 📝 **Forms & Inputs** - 12 designs
+- 🎴 **Cards & Containers** - 10 styles
+- 🔄 **Loaders & Spinners** - 8 animations
+- 💫 **Hover Effects** - 20+ animations
+- 🌊 **Background Effects** - 8 patterns
+- 🎭 **3D Elements** - 5 components
+- 📱 **Responsive Layouts** - 5 templates
+
+## ⚡ Quick Start
+
+### Prerequisites
+
+- Node.js 18.x or later
+- npm or yarn
+- Git
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Arihant2312/yourcss.git
+   cd yourcss
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Run development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Open browser**
+   Visit [http://localhost:3000](http://localhost:3000)
+
+### Production Build
+
+```bash
+npm run build
+npm start
+# or
+yarn build
+yarn start
+```
+
+## 🏗️ Project Structure
+
+```
+yourcss/
+├── public/               # Static assets
+│   ├── cssCode/         # CSS component files
+│   ├── formCode/        # HTML form templates
+│   └── htmlCode/        # HTML component files
+├── src/
+│   ├── app/            # Next.js app router pages
+│   ├── components/     # React components
+│   │   ├── ui/        # UI components
+│   │   └── CssEntity/ # CSS preview components
+│   ├── contexts/      # React contexts
+│   └── lib/          # Utility functions
+├── .github/          # GitHub configuration
+└── docs/            # Documentation
+```
 
 ---
 
-## 📖 About the Project
+## 🤝 Contributing
 
-Welcome to **YourCSS** – a modern web application designed to help developers **explore, interact with, and copy beautiful CSS designs** effortlessly! 🎨✨ 
+We love your input! We want to make contributing to YourCSS as easy and transparent as possible. Please read our [Contributing Guidelines](./CONTRIBUTING.md) before submitting any contributions.
 
-Whether you're a beginner looking for inspiration or an experienced developer seeking ready-to-use components, YourCSS provides a curated collection of stunning CSS snippets for buttons, forms, layouts, and more. Our platform makes it incredibly easy to find the perfect design and integrate it into your projects with just one click!
+### Ways to Contribute
 
-### 🎯 Why YourCSS?
+1. 🐛 **Report bugs** or request features using GitHub issues
+2. 🎨 **Submit new CSS components** by following our [component guidelines](./docs/COMPONENT_GUIDELINES.md)
+3. � **Improve documentation** - fix typos, clarify explanations, add examples
+4. 💡 **Share ideas** for new features or improvements
+5. ⭐ **Star the project** to show your support
 
-- **Time-Saver**: No need to write CSS from scratch
-- **Quality Designs**: Handpicked, modern, and responsive components
-- **Learning Resource**: Great for understanding CSS techniques
-- **Free & Open Source**: Community-driven project welcoming contributions
+### Development Process
 
-🔗 **Live Demo**: [https://yourcss.vercel.app/](https://yourcss.vercel.app/)
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-component`)
+3. Add your component files to the appropriate directories
+4. Update the component registry if needed
+5. Commit your changes (`git commit -m 'Add some amazing component'`)
+6. Push to the branch (`git push origin feature/amazing-component`)
+7. Open a Pull Request
+
+## 🚀 Deployment
+
+### Vercel Deployment (Recommended)
+
+1. Fork this repository
+2. Sign up on [Vercel](https://vercel.com)
+3. Import your forked repository
+4. Vercel will automatically detect Next.js and configure the build
+5. Deploy and get your live URL
+
+### Manual Deployment
+
+1. Build the project:
+   ```bash
+   npm run build
+   ```
+
+2. Start the production server:
+   ```bash
+   npm start
+   ```
+
+3. Configure your web server to serve the `.next` directory
+
+### Environment Variables
+
+```env
+NEXT_PUBLIC_SITE_URL=your-site-url
+NEXT_PUBLIC_GA_ID=your-analytics-id  # Optional
+```
+
+## 📚 Documentation
+
+- [Component Guidelines](./docs/COMPONENT_GUIDELINES.md)
+- [Contribution Guide](./CONTRIBUTING.md)
+- [Code of Conduct](./CODE_OF_CONDUCT.md)
+- [License](./LICENSE.md)
+
+## 🙏 Acknowledgments
+
+- Thanks to all our [contributors](https://github.com/Arihant2312/yourcss/graphs/contributors)
+- Built with [Next.js](https://nextjs.org/) and [TailwindCSS](https://tailwindcss.com/)
+- Deployed on [Vercel](https://vercel.com)
 
 ---
-
-## 📸 Screenshots
 
 <div align="center">
 
-### Home Page
-![YourCSS Home](https://github.com/user-attachments/assets/6c69dc26-91c7-4e63-9db9-af4399828aec)
+Made with ❤️ by the YourCSS Community
 
-### CSS Components Gallery
-![Components Gallery](https://github.com/user-attachments/assets/a6a31cb9-0eaa-4354-a8cd-1756030cdbad)
-
-### Interactive Preview
-![Interactive Preview](https://github.com/user-attachments/assets/1688cfb8-f753-4d2d-8229-e9b6b51146e0)
-
-### Code Snippet View
-![Code Snippet](https://github.com/user-attachments/assets/692376ef-ca0f-47e4-8c58-b575847cb345)
+[⬆ Back to Top](#yourcss-project)
 
 </div>
-
----
-
-## 🚀 Features
-
-✨ **Core Features:**
-
-* 🎨 **Browse CSS Designs** – Explore a wide range of pre-made, professional CSS designs
-* 📋 **One-Click Copy** – Instantly copy CSS snippets to your clipboard with a single click
-* 🖥️ **User-Friendly Interface** – Simple, clean, and intuitive design for seamless navigation
-* 📱 **Fully Responsive** – Works flawlessly across desktops, tablets, and mobile devices
-* ⚡ **Live Interactive Components** – Preview designs in action before using them
-* 🔍 **Easy Search & Filter** – Quickly find the components you need
-* 🎯 **Organized Categories** – Designs sorted by type (buttons, forms, cards, etc.)
-* 💾 **Save Favorites** – Bookmark your favorite designs for quick access
-
----
-
-## 🛠️ Technologies Used
-
-<div align="center">
-
-| Technology | Description |
-|------------|-------------|
-| ![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat&logo=next.js) | React-based framework for building efficient, server-rendered web applications |
-| ![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white) | Utility-first CSS framework for rapid, modern styling |
-| ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) | Programming language for dynamic functionality and interactivity |
 | ![Vercel](https://img.shields.io/badge/-Vercel-000000?style=flat&logo=vercel) | Deployment platform for seamless hosting and CI/CD |
 
 </div>
@@ -243,7 +342,7 @@ Thanks to all the amazing people who have contributed to this project:
 This project was inspired by the need for a centralized, easy-to-use platform where developers can discover and implement beautiful CSS designs without the hassle.
 
 ---
-
+z
 ## ⭐ Show Your Support
 
 If you find **YourCSS** helpful, please consider giving it a star! ⭐
