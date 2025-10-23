@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Contributers from "../pages/contributers";
 
 const AboutPage = () => {
 	return (
@@ -115,7 +116,7 @@ const AboutPage = () => {
 			</section>
 
 			{/* Team Section */}
-			<section className="bg-white dark:bg-gray-900 py-20 transition-colors duration-300">
+			{/* <section className="bg-white dark:bg-gray-900 py-20 transition-colors duration-300">
 				<div className="container mx-auto px-6 text-center">
 					<h2 className="text-4xl font-bold mb-12 text-gray-900 dark:text-gray-100">
 						Meet Our Team
@@ -172,7 +173,8 @@ const AboutPage = () => {
 						))}
 					</div>
 				</div>
-			</section>
+			</section> */}
+			<Contributers/>                                 
 		</div>
 	);
 };
