@@ -124,10 +124,6 @@ export default function Contributors() {
               Load More
             </button>
           )}
-
-          {!hasMore && !loading && (
-            <p className="text-gray-600 dark:text-gray-400">All contributors loaded.</p>
-          )}
         </div>
       </div>
     </section>
