@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import { GlobeAltIcon } from "@heroicons/react/24/outline";
+import { ArrowTopRightOnSquareIcon, GlobeAltIcon } from "@heroicons/react/24/outline";
 
 const OWNER = "Gyanthakur";
 const REPO = "yourcss_contribution";
@@ -20,7 +19,6 @@ export default function Contributors() {
   const fetchContributors = async (pageToLoad = 1) => {
     setLoading(true);
     setError(null);
-
     try {
       const res = await fetch(
         `https://api.github.com/repos/${OWNER}/${REPO}/contributors?per_page=${PER_PAGE}&page=${pageToLoad}&anon=1`,
@@ -31,7 +29,6 @@ export default function Contributors() {
           },
         }
       );
-
       if (!res.ok) throw new Error(`GitHub API error: ${res.statusText}`);
       const data = await res.json();
       setContributors((prev) => (pageToLoad === 1 ? data : [...prev, ...data]));
@@ -61,18 +58,22 @@ export default function Contributors() {
         </h2>
 
         {error && (
-          <p className="text-center text-red-600 dark:text-red-400 mb-6">
-            {error}
-          </p>
+          <p className="text-center text-red-600 dark:text-red-400 mb-6">{error}</p>
         )}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {contributors.map((c) => (
             <div
               key={c.id}
-              className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg border border-gray-200 dark:border-gray-700 
-              transition-transform transform hover:-translate-y-1 duration-300"
+              className="relative p-6 bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-xl 
+              border border-gray-200 dark:border-gray-700 transition-transform transform hover:-translate-y-1 duration-300"
             >
+              {c.login === OWNER && (
+                <span className="absolute top-3 right-3 text-xs font-medium px-2 py-0.5 bg-green-100 text-green-700 dark:bg-green-700 dark:text-green-200 rounded-full">
+                  Owner
+                </span>
+              )}
+
               <div className="flex flex-col items-center text-center space-y-3">
                 <img
                   src={c.avatar_url || "/profile.jpg"}
@@ -92,7 +93,8 @@ export default function Contributors() {
                   href={c.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-blue-700 text-blue-600 dark:text-blue-300 transition"
+                  className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-blue-700 
+                             text-blue-600 dark:text-blue-300 transition"
                   title="View GitHub Profile"
                 >
                   <ArrowTopRightOnSquareIcon className="w-5 h-5" />
@@ -102,7 +104,8 @@ export default function Contributors() {
                   href={`https://github.com/${OWNER}/${REPO}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-green-100 dark:hover:bg-green-700 text-green-600 dark:text-green-300 transition"
+                  className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-green-100 dark:hover:bg-green-700 
+                             text-green-600 dark:text-green-300 transition"
                   title="Go to Repository"
                 >
                   <GlobeAltIcon className="w-5 h-5" />
@@ -118,8 +121,8 @@ export default function Contributors() {
           {!loading && hasMore && (
             <button
               onClick={loadMore}
-              className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white 
-              px-6 py-2 rounded-full font-medium transition-all"
+              className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 
+              text-white px-6 py-2 rounded-full font-medium transition-all"
             >
               Load More
             </button>
