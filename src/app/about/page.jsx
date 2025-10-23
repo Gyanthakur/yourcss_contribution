@@ -114,66 +114,6 @@ const AboutPage = () => {
 					</div>
 				</div>
 			</section>
-
-			{/* Team Section */}
-			{/* <section className="bg-white dark:bg-gray-900 py-20 transition-colors duration-300">
-				<div className="container mx-auto px-6 text-center">
-					<h2 className="text-4xl font-bold mb-12 text-gray-900 dark:text-gray-100">
-						Meet Our Team
-					</h2>
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-						{[
-							{
-								name: "Gyanthakur",
-								contrib: "19",
-								color: "from-blue-400 to-purple-600",
-							},
-							{
-								name: "wrexrus",
-								contrib: "6",
-								color: "from-red-400 to-pink-600",
-							},
-							{
-								name: "siddharthbaleja7",
-								contrib: "3",
-								color: "from-gray-500 to-gray-700",
-							},
-							{
-								name: "CodeVoyager3",
-								contrib: "2",
-								color: "from-green-400 to-blue-600",
-							},
-							{
-								name: "VJ",
-								contrib: "1",
-								color: "from-purple-500 to-indigo-600",
-							},
-							{
-								name: "Contributor",
-								contrib: "Community Member",
-								color: "from-orange-400 to-red-500",
-							},
-						].map((member) => (
-							<div
-								key={member.name}
-								className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl p-6 transition transform hover:-translate-y-1"
-							>
-								<div
-									className={`w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br ${member.color} flex items-center justify-center`}
-								>
-									<span className="text-white font-bold text-2xl">
-										{member.name.charAt(0).toUpperCase()}
-									</span>
-								</div>
-								<h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-								<p className="text-gray-600 dark:text-gray-400">
-									Contributions: {member.contrib}
-								</p>
-							</div>
-						))}
-					</div>
-				</div>
-			</section> */}
 			<Contributers/>                                 
 		</div>
 	);
